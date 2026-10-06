@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.border {
+  border: 1px solid white;
+}
+
 body {
   font-family: 'Fredoka', sans-serif;
   background-color: #000000;
@@ -92,33 +96,12 @@ body {
   background-color: rgba(160, 32, 240, 0.2);
 }
 
-/* Conteúdo principal */
-.main {
-  height: 70vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 40px 220px;
-  gap: 40px;
-}
-
-/* Seção hero (logo + texto da esquerda) */
-.hero {
-  max-width: 500px;
-}
-
-.logo {
-  width: 280px;
-  margin-bottom: 15px;
-  margin-left: 40px;
-}
+/* Hero */
 
 .titulo {
   font-size: 42px;
   font-weight: 700;
   margin-bottom: 20px;
-  margin-left: 40px;
 }
 
 .subtitulo {
@@ -126,7 +109,6 @@ body {
   font-weight: 600;
   line-height: 1.3;
   margin-bottom: 15px;
-  margin-left: 40px;
 }
 
 .descricao {
@@ -134,29 +116,6 @@ body {
   line-height: 1.6;
   color: #cccccc;
   margin-bottom: 20px;
-  margin-left: 40px;
-}
-
-.status {
-  list-style: none;
-  margin-left: 40px;
-}
-
-.status li {
-  display: flex;
-  align-items: center;
-  font-size: 13px;
-  margin-bottom: 8px;
-  color: #dddddd;
-}
-
-.bolinha {
-  width: 16px;
-  height: 16px;
-  background-color: #22c55e;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 8px;
 }
 
 /* Seção de ação (direita) */
@@ -167,7 +126,6 @@ body {
 .acao-titulo {
   font-size: 28px;
   font-weight: 700;
-  margin-bottom: 10px;
 }
 
 .destaque {
@@ -177,117 +135,20 @@ body {
 .acao-texto {
   font-size: 13px;
   color: #cccccc;
-  margin-bottom: 20px;
+
 }
 
-/* =========================================
-   FOOTER
-========================================= */
-.rodape {
-  padding: 35px 7%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-  border-top: 1px solid var(--borda);
-  color: var(--texto-fraco);
-}
-.rodape strong {
-  color: var(--branco);
-}
-.rodape p {
-  font-size: 0.9rem;
+.img-fluid{
+  max-width: 280px;
 }
 
-/* =========================================
-   RESPONSIVO
-========================================= */
-@media (max-width: 1024px) {
-  .main {
-    padding: 40px 60px;
-  }
-}
-
-@media (max-width: 800px) {
-  .main {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-    height: auto;
-  }
-
-  .header {
-    justify-content: space-between;
-  }
-
-  .status li {
-    justify-content: center;
-  }
-
-  .btn-preenchido,
-  .btn-borda {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .logo,
-  .titulo,
-  .subtitulo,
-  .descricao,
-  .status {
-    margin-left: 0;
-  }
-
-  .rodape {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-@media (max-width: 600px) {
-  .menu-btn {
-    display: block;
-  }
-
-  .nav {
+@media(max-width:992px){
+  .status{
     display: none;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 10px;
-    margin-top: 15px;
-  }
-
-  .menu-toggle:checked ~ .nav {
-    display: flex;
-  }
-
-  .btn {
-    width: 100%;
-    max-width: 280px;
-    text-align: center;
   }
 }
-
-@media (max-width: 480px) {
-  .titulo {
-    font-size: 32px;
-  }
-
-  .subtitulo {
-    font-size: 20px;
-  }
-
-  .acao-titulo {
-    font-size: 22px;
-  }
-
-  .header {
-    padding: 20px;
-  }
-
-  .btn {
-    font-size: 12px;
-    padding: 10px 18px;
+@media(max-width:500px){
+  .img-fluid{
+    max-width: 200px;
   }
 }

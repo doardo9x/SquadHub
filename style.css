@@ -13,7 +13,6 @@ body {
   background-color: #000000;
   background-image:linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)),
     url("img/BG.png");
-  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -21,33 +20,11 @@ body {
   min-height: 100vh;
 }
 
-/* Cabeçalho */
-.header {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 30px 50px;
-}
 
-.nav {
-  display: flex;
-  gap: 15px;
-}
-
-/* Menu escondido (mobile) */
-.menu-toggle {
-  display: none;
-}
-
-.menu-btn {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: #ffffff;
-}
 
 /* Botões */
 .btn {
+  color: white;
   font-family: 'Fredoka', sans-serif;
   font-weight: 600;
   font-size: 13px;
@@ -59,14 +36,8 @@ body {
   text-decoration: none;
 }
 
-.btn-outline {
-  background-color: transparent;
-  /* border: 2px solid #a020f0; */
-  color: #ffffff;
-}
-
-.btn-outline:hover {
-  background-color: rgba(160, 32, 240, 0.2);
+.btn:hover{
+  background-color: #8a1bd1;
 }
 
 .btn-preenchido {
@@ -83,18 +54,18 @@ body {
   background-color: #8a1bd1;
 }
 
-.btn-borda {
+.btn-lobby {
   background-color: transparent;
-  border: 2px solid #a020f0;
   color: #ffffff;
   display: block;
   width: 100%;
   max-width: 260px;
 }
 
-.btn-borda:hover {
-  background-color: rgba(160, 32, 240, 0.2);
+.btn-lobby:hover {
+  background-color: rgba(252, 251, 253, 0.2);
 }
+
 
 /* Hero */
 
@@ -117,6 +88,7 @@ body {
   color: #cccccc;
   margin-bottom: 20px;
 }
+
 
 /* Seção de ação (direita) */
 .acao {

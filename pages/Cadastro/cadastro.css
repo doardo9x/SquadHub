@@ -151,44 +151,151 @@ body {
    Requisitos senha
 ========================= */
 
-/* Caixa com os requisitos da senha */
+/* Caixa de requisitos da senha */
 .requisitos-senha {
-    margin-top: 10px;
-    padding: 12px 15px;
-    background-color: #292929;
-    border: 1px solid #3a3a3a;
-    border-radius: 8px;
+    margin-top: 12px;
+    padding: 16px;
+    background-color: #17171e;
+    border: 1px solid #33313d;
+    border-radius: 12px;
+    transition: border-color 0.2s ease;
 }
 
-/* Título da caixa */
-.requisitos-senha p {
-    margin-bottom: 8px;
-    color: #bbbbbb;
-    font-size: 10px;
+/* Título */
+.requisitos-titulo {
+    margin: 0 0 12px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
 }
 
-/* Organização dos requisitos */
+/* Lista de requisitos */
 .requisitos-senha ul {
     display: flex;
-    flex-wrap: wrap;
-    gap: 6px 15px;
+    flex-direction: column;
+    gap: 10px;
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-/* Requisito ainda não cumprido */
+/* Requisito pendente */
 .requisitos-senha li {
-    color: #999999;
-    font-size: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #b0adb9;
+    font-size: 13px;
+    line-height: 1.5;
     transition: color 0.2s ease;
+}
+
+/* Indicador visual */
+.requisito-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #65616f;
+    border-radius: 50%;
+    color: transparent;
+    font-size: 11px;
+    font-weight: 700;
+    transition: all 0.2s ease;
 }
 
 /* Requisito cumprido */
 .requisitos-senha li.valido {
+    color: #d8c0ff;
+}
+
+.requisitos-senha li.valido .requisito-icone {
+    color: #ffffff;
+    background-color: #8b3dff;
+    border-color: #8b3dff;
+}
+
+/* Destaque sutil quando o usuário interage com a senha */
+.requisitos-senha:focus-within {
+    border-color: #8b3dff;
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 576px) {
+    .requisitos-senha {
+        padding: 14px;
+    }
+
+    .requisitos-titulo {
+        font-size: 13px;
+    }
+
+    .requisitos-senha li {
+        font-size: 12px;
+    }
+}
+
+/* Campo de senha e botão de exibição */
+.campo-senha {
+    width: 100%;
+}
+
+.btn-olho {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: #aaa6b5;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-olho:hover {
+    color: #b47cff;
+    background-color: #292333;
+}
+
+.btn-olho:focus-visible {
+    outline: 2px solid #b47cff;
+    outline-offset: 2px;
+}
+
+/* Feedback de confirmação */
+.feedback-senhas {
+    margin-top: 7px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.feedback-senhas:empty {
+    display: none;
+}
+
+.feedback-senhas.invalido {
+    color: #ff8585;
+}
+
+.feedback-senhas.valido {
     color: #b47cff;
 }
 
+/* Estado dos campos */
+.campo-senha .form-control.senha-invalida {
+    border-color: #ff8585;
+}
+
+.campo-senha .form-control.senha-valida {
+    border-color: #8b3dff;
+}
 /* =========================
    TERMOS DE USO
 ========================= */

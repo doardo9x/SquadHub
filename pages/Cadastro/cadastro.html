@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS do cadastro -->
-
     <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,10 +15,8 @@
 </head>
 
 <body>
-
     <main class="container text-white">
         <div class="row min-vh-100 align-items-center">
-
             <!-- Lado esquerdo -->
             <section class="col-12 col-lg-6 cadastro-apresentacao">
                 <div class="cadastro-texto">
@@ -28,39 +24,32 @@
                         BEM-VINDO AO
                         <span>SQUADHUB</span>
                     </h1>
-
                     <p>
                         ENCONTRE JOGADORES, FORME SQUAD
                         E EVOLUA NO JOGO.
                     </p>
                 </div>
-                <!-- <div class="logo-container">
-                <img
-                    src="../../img/SquadHub Logo.png"
-                    alt="Logo SquadHub"
-                    class="logo-squadhub img-fluid"
-                >
-            </div> -->
+                <!--
+                <div class="logo-container">
+                    <img src="../../img/SquadHub Logo.png" alt="Logo SquadHub" class="logo-squadhub img-fluid">
+                </div>
+                -->
             </section>
 
             <!-- Lado direito -->
-            <section class="col-12 col-lg-6 cadastro-formulario
-                        d-flex justify-content-center
-                        align-items-center py-5">
+            <section class="col-12 col-lg-6 cadastro-formulario d-flex justify-content-center align-items-center py-5">
+                <form class="formulario w-100" onsubmit="window.location.href='../RetornoCadastro/RetornoCadastro.html'; return false;">
 
-                <form class="formulario w-100"
-                    onsubmit="window.location.href='../RetornoCadastro/RetornoCadastro.html'; return false;">
-
+                    <!-- Titulo -->
                     <div class="formulario-titulo mb-4">
-                        <h2>
-                            CRIE SUA <span>CONTA</span>
-                        </h2>
+                        <h2>CRIE SUA <span>CONTA</span></h2>
                         <p>
                             DÊ O PRIMEIRO PASSO PARA FAZER
                             PARTE DO SQUADHUB
                         </p>
                     </div>
 
+                    <!-- Campo: Nome de usuario -->
                     <div class="campo mb-3">
                         <label for="usuario" class="form-label">
                             <img src="../../img/person.svg" alt="">
@@ -70,6 +59,7 @@
                             placeholder="DIGITE SEU NOME DE USUÁRIO" required>
                     </div>
 
+                    <!-- Campo: Email-->
                     <div class="campo mb-3">
                         <label for="email" class="form-label">
                             <img src="../../img/mail.svg" alt="">
@@ -79,40 +69,100 @@
                             required>
                     </div>
 
+                    <!-- Campo: Senha -->
                     <div class="campo mb-3">
                         <label for="senha" class="form-label">
                             <img src="../../img/lock.svg" alt="">
                             SENHA
                         </label>
-                        <input type="password" class="form-control" id="senha" name="senha"
-                            placeholder="DIGITE SUA SENHA" minlength="8"
-                            pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}"
-                            title="Use no mínimo 8 caracteres, incluindo maiúscula, minúscula, número e caractere especial."
-                            required>
-                        
-                        <div id="requisitos-senha" class="requisitos-senha">
-                            <p>A senha deve conter:</p>
 
+                        <div class="campo-senha position-relative">
+                            <input type="password" class="form-control pe-5" id="senha" name="senha"
+                                placeholder="DIGITE SUA SENHA" minlength="8"
+                                pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}"
+                                title="Use no mínimo 8 caracteres, incluindo maiúscula, minúscula, número e caractere especial."
+                                aria-describedby="requisitos-senha" required>
+
+                            <button type="button" class="btn-olho" data-toggle-password="senha"
+                                aria-label="Exibir senha" aria-pressed="false">
+                                <svg class="icone-olho" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                <svg class="icone-olho-fechado d-none" xmlns="http://www.w3.org/2000/svg" width="20"
+                                    height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="m3 3 18 18" />
+                                    <path d="M10.6 10.6a2 2 0 0 0 2.8 2.8" />
+                                    <path d="M9.9 5.2A10.8 10.8 0 0 1 12 5c6.4 0 10 7 10 7a15.5 15.5 0 0 1-4 4.8" />
+                                    <path d="M6.2 6.2C3.5 8 2 12 2 12s3.6 7 10 7a10.8 10.8 0 0 0 3-.4" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div id="requisitos-senha" class="requisitos-senha">
+                            <p class="requisitos-titulo">Sua senha deve ter:</p>
                             <ul>
-                                <li id="req-tamanho">8 caracteres no mínimo</li>
-                                <li id="req-maiuscula">Uma letra maiúscula</li>
-                                <li id="req-minuscula">Uma letra minúscula</li>
-                                <li id="req-numero">Um número</li>
-                                <li id="req-especial">Um caractere especial</li>
+                                <li id="req-tamanho">
+                                    <span class="requisito-icone">✓</span>
+                                    Pelo menos 8 caracteres
+                                </li>
+                                <li id="req-maiuscula">
+                                    <span class="requisito-icone">✓</span>
+                                    Uma letra maiúscula
+                                </li>
+                                <li id="req-minuscula">
+                                    <span class="requisito-icone">✓</span>
+                                    Uma letra minúscula
+                                </li>
+                                <li id="req-numero">
+                                    <span class="requisito-icone">✓</span>
+                                    Um número
+                                </li>
+                                <li id="req-especial">
+                                    <span class="requisito-icone">✓</span>
+                                    Um caractere especial
+                                </li>
                             </ul>
                         </div>
-                       
                     </div>
 
+                    <!-- Campo: Confirmar Senha -->
                     <div class="campo mb-3">
                         <label for="confirmar-senha" class="form-label">
                             <img src="../../img/lock.svg" alt="">
                             CONFIRMAR SENHA
                         </label>
 
-                        <input type="password" class="form-control" id="confirmar-senha" name="confirmar-senha"
-                            placeholder="CONFIRME SUA SENHA" required>
+                        <div class="campo-senha position-relative">
+                            <input type="password" class="form-control pe-5" id="confirmar-senha" name="confirmar-senha"
+                                placeholder="CONFIRME SUA SENHA" aria-describedby="feedback-senhas" required>
+
+                            <button type="button" class="btn-olho" data-toggle-password="confirmar-senha"
+                                aria-label="Exibir confirmação da senha" aria-pressed="false">
+                                <svg class="icone-olho" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                <svg class="icone-olho-fechado d-none" xmlns="http://www.w3.org/2000/svg" width="20"
+                                    height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="m3 3 18 18" />
+                                    <path d="M10.6 10.6a2 2 0 0 0 2.8 2.8" />
+                                    <path d="M9.9 5.2A10.8 10.8 0 0 1 12 5c6.4 0 10 7 10 7a15.5 15.5 0 0 1-4 4.8" />
+                                    <path d="M6.2 6.2C3.5 8 2 12 2 12s3.6 7 10 7a10.8 10.8 0 0 0 3-.4" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div id="feedback-senhas" class="feedback-senhas" aria-live="polite"></div>
                     </div>
+
+                    <!-- Campo: -->
                     <div class="form-check mb-4 termos">
                         <input class="form-check-input" type="checkbox" id="termos" required>
                         <label class="form-check-label" for="termos">
@@ -124,13 +174,10 @@
                         CRIAR CONTA
                         <span class="seta">→</span>
                     </button>
-
                 </form>
             </section>
-
         </div>
     </main>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

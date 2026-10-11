@@ -8,7 +8,6 @@
     --verde-brilho: #1b4332;
     --verde-escuro: #0a1512;
     --Radius-padrao: 15px;
-
     --borda: #333333;
     --texto-fraco: #aaaaaa;
     --branco: #ffffff;
@@ -22,43 +21,6 @@
     box-sizing: border-box;
 }
 
-.cabecalho {
-    width: 100%;
-    padding: 20px 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.cabecalho__nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 16px;
-}
-
-.btn__cabecalho {
-    color: white;
-    display: inline-block;
-    text-decoration: none;
-    font-family: 'Fredoka', sans-serif;
-    font-weight: 500;
-    font-size: 0.8rem;
-    padding: 10px 20px;
-}
-
-.menu-toggle {
-  display: none;
-}
-
-.menu-btn {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: #ffffff;
-}
-
 body {
     background: radial-gradient(circle at top, var(--verde-brilho), var(--verde-escuro), var(--cor-fundo));
     color: var(--cor-textos);
@@ -66,31 +28,39 @@ body {
     font-family: 'Fredoka', sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
 }
 
-.container {
-    max-width: 900px;
-    width: 100%;
-    padding: 40px 20px;
+main {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin: 0 auto;
+    justify-content: center;
 }
+
+/* HEADER */
+.btn {
+    color: white;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    padding: 12px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    transition: all 0.6s ease;
+}
+
+.btn:hover {
+    background-color: #3333336a;
+    transform: translateY(-4px);
+}
+
 
 .corspan {
     color: var(--cor-textos-destacados);
 }
 
-.secaosuperior {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
 
 .secaosuperior h1 {
     font-size: 1.8rem;
@@ -104,14 +74,9 @@ body {
     width: 90px;
 }
 
-.texto {
-    font-size: 0.95rem;
-    max-width: 500px;
-}
-
-.btn {
+.btn-login {
     display: inline-block;
-    background: var(--cor-textos-destacados);
+    background: #991ec5a2;
     color: var(--cor-textos);
     width: 300px;
     text-decoration: none;
@@ -121,11 +86,20 @@ body {
     letter-spacing: 1px;
     padding: 12px 40px;
     border-radius: var(--Radius-padrao);
+    transition: all 0.6s ease;
 }
 
-.btn__cabecalho:hover {
-  background-color: rgba(160, 32, 240, 0.2);
+.btn-login:hover {
+    color: var(--cor-textos);
+    background-color: #3333336a;
+    transform: translateY(-4px);
 }
+
+.texto {
+    font-size: 0.95rem;
+    max-width: 500px;
+}
+
 
 .icones {
     display: flex;
@@ -135,138 +109,13 @@ body {
     width: 100%;
 }
 
-.icones > * {
+.icones>* {
     text-align: center;
     position: relative;
     min-width: 300px;
     padding: 0 20px;
 }
 
-.icones > div:not(:last-child) {
+.icones>div:not(:last-child) {
     border-right: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.textorodape {
-    font-family: 'Fredoka', sans-serif;
-    font-size: 0.75rem;
-    text-align: center;
-    width: 100%;
-}
-
-footer {
-    width: 100%;
-    text-align: center;
-}
-
-
-
-/* =========================================
-   FOOTER
-========================================= */
-.rodape {
-    padding: 35px var(--margem-lateral);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-    border-top: 1px solid var(--borda);
-    color: var(--texto-fraco);
-}
-.rodape strong {
-    color: var(--branco);
-}
-.rodape p {
-    font-size: 0.9rem;
-}
-
-
-/* =========================================
-   RESPONSIVIDADE
-========================================= */
-
-@media (max-width: 850px) {
-    .cabecalho {
-        justify-content: space-between;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    .cabecalho__nav {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        gap: 10px;
-        margin-top: 15px;
-    }
-
-    .menu-toggle:checked ~ .cabecalho__nav {
-        display: flex;
-    }
-
-    .icones {
-        flex-direction: column;
-        gap: 25px;
-    }
-
-    .icones > * {
-        min-width: 0;
-        width: 100%;
-        padding: 0;
-    }
-
-    .icones > div:not(:last-child) {
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        padding-bottom: 20px;
-    }
-
-    .rodape {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .rodape > * {
-        min-width: 0;
-        padding: 0;
-    }
-
-    .rodape > div:not(:last-child) {
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        padding-bottom: 20px;
-    }
-
-    .rodape-site {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-
-@media (max-width: 480px) {
-
-    .secaosuperior h1 {
-        font-size: 1.4rem;
-    }
-
-    .secaosuperior h2 {
-        font-size: 1.2rem;
-    }
-
-    .texto {
-        font-size: 0.85rem;
-    }
-
-    .btn {
-        width: 100%;
-        max-width: 300px;
-        padding: 12px 20px;
-    }
-
-    .cabecalho {
-        padding: 20px;
-    }
 }

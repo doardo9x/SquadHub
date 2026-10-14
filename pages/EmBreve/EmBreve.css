@@ -169,10 +169,6 @@ section a:hover {
         0 8px 25px rgba(139, 61, 255, 0.18);
 }
 /* =========================================
-   TEXTO DOS LINKS
-========================================= */
-
-/* =========================================
    RESPONSIVIDADE
 ========================================= */
 @media (max-width: 600px) {
@@ -195,23 +191,4 @@ section a:hover {
         max-width: 100%;
         font-size: 0.8rem;
     }
-}
-
-/* =========================================
-   FOOTER
-========================================= */
-.rodape {
-    padding: 35px 7%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-    border-top: 1px solid var(--borda);
-    color: var(--texto-fraco);
-}
-.rodape strong {
-    color: var(--branco);
-}
-.rodape p {
-    font-size: 0.9rem;
 }

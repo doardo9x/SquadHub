@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-.border {
-  border: 1px solid white;
-}
-
 body {
   font-family: 'Fredoka', sans-serif;
   background-color: #000000;
@@ -68,12 +64,6 @@ body {
 
 
 /* Hero */
-
-.titulo {
-  font-size: 42px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
 
 .subtitulo {
   font-size: 24px;

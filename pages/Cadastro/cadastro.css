@@ -153,12 +153,18 @@ body {
 
 /* Caixa de requisitos da senha */
 .requisitos-senha {
+    display: none;
     margin-top: 12px;
     padding: 16px;
     background-color: #17171e;
     border: 1px solid #33313d;
     border-radius: 12px;
     transition: border-color 0.2s ease;
+}
+
+.campo-senha:focus-within + .requisitos-senha,
+.requisitos-senha.visivel {
+    display: block;
 }
 
 /* Título */
@@ -414,4 +420,75 @@ body {
     .botao-cadastro {
         font-size: 11px;
     }
+}
+
+/* Menu lateral compartilhado nesta página */
+.navbar-toggler {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1035;
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.squad-menu {
+    color: #fff;
+    background: radial-gradient(circle at top right, rgba(160, 32, 240, 0.25), transparent 45%), #111;
+}
+
+.menu-logo {
+    width: 90px;
+    height: auto;
+}
+
+.menu-nav-icon {
+    width: 21px;
+    height: 21px;
+    margin-right: 1rem;
+    flex: 0 0 auto;
+    stroke: #c66bff;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.menu-nav-link {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.04);
+    text-decoration: none;
+}
+
+.menu-nav-link:hover {
+    color: #fff;
+    background: rgba(160, 32, 240, 0.16);
+}
+
+.text-purple {
+    color: #c66bff;
+}
+
+.btn-purple {
+    color: #fff;
+    background-color: #a020f05c;
+}
+
+.btn-purple:hover,
+.menu-login-link:hover {
+    color: #fff;
+    background-color: #8a1bd1;
+}
+
+.menu-login-link {
+    color: #fff;
+    text-decoration: none;
 }

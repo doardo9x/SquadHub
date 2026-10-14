@@ -2,6 +2,7 @@
 const senha = document.getElementById("senha");
 const confirmarSenha = document.getElementById("confirmar-senha");
 const feedbackSenhas = document.getElementById("feedback-senhas");
+const requisitosSenha = document.getElementById("requisitos-senha");
 
 // Lista dos requisitos e suas regras
 const requisitos = [
@@ -103,6 +104,7 @@ document.querySelectorAll("[data-toggle-password]").forEach(botao => {
 
 // Valida os requisitos ao digitar a senha
 senha.addEventListener("input", () => {
+    requisitosSenha.classList.toggle("visivel", senha.value.length > 0);
     verificarRequisitosSenha();
     verificarSenhas();
 });

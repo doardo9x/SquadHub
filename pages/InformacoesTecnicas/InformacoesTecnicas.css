@@ -71,23 +71,6 @@ body {
     background-color: #09090c;
 }
 
-/* Links de navegação para telas grandes, no estilo do index */
-.desktop-nav .btn {
-    color: #fff;
-    background: transparent;
-    border-color: transparent;
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    padding: 12px 22px;
-    text-decoration: none;
-}
-
-.desktop-nav .btn:hover {
-    background: #8a1bd1;
-}
-
 /* Menu lateral e sua aparência */
 .squad-menu {
     color: #fff;
@@ -100,14 +83,29 @@ body {
     height: auto;
 }
 
-/* Ícones SVG dos links e do botão de cadastro no menu */
-.menu-item-icon {
-    width: 20px;
-    height: 20px;
+/* Ícones SVG dos links do menu */
+.menu-nav-icon {
+    width: 21px;
+    height: 21px;
+    margin-right: 1rem;
     flex: 0 0 auto;
-    fill: none;
     stroke: #c66bff;
-    stroke-width: 1.7;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Mantém o botão de menu visível em qualquer tamanho de tela */
+.navbar-toggler {
+    z-index: 1035;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler:focus:not(:focus-visible) {
+    outline: none;
 }
 
 /* Links do menu lateral */
@@ -130,7 +128,7 @@ body {
 
 .menu-login-link:hover {
     color: #fff;
-    background: rgba(160, 32, 240, 0.178);
+    background: #8a1bd1;
 }
 
 /* Botão roxo de cadastro no menu lateral */

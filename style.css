@@ -124,3 +124,38 @@ body {
     max-width: 200px;
   }
 }
+
+/* Ícone do menu lateral */
+.navbar-toggler {
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+}
+/* Quando clica no botão */
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Personalizacoes menu Bootstrap */
+.squad-menu {
+  color: #fff;
+  background: radial-gradient(circle at top right, rgba(160, 32, 240, 0.25), transparent 45%), #111;
+}
+
+.text-purple {
+  color: #c66bff;
+}
+
+.btn-purple {
+  color: #fff;
+  background-color: #a020f0;
+  border-color: #a020f0;
+}
+
+.btn-purple:hover {
+  color: #fff;
+  background-color: #8a1bd1;
+  border-color: #8a1bd1;
+}
+
+

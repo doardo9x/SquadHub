@@ -40,28 +40,48 @@
     </nav>
 
     <!-- MENU LATERAL -->
-    <div class="offcanvas offcanvas-end p-5 bg-dark" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-              aria-label="Fechar"></button>
-          </div>
+    <div class="offcanvas offcanvas-end squad-menu" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
+      <div class="offcanvas-header border-bottom border-secondary p-4">
+
+        <div>
+          <span class="text-uppercase text-purple fw-bold small">SquadHub</span>
+          <h2 class="offcanvas-title fs-4 mt-2 text-uppercase" id="menuLateralLabel">Seu próximo squad começa aqui</h2>
         </div>
-        <div class="row">
-          <a class="btn mt-3 mb-2" href="pages/InformacoesTecnicas/InformacoesTecnicas.html">
-            SOBRE
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+          aria-label="Fechar menu"></button>
+      </div>
+
+      <div class="offcanvas-body d-flex flex-column p-4">
+        <p class="text-uppercase text-secondary fw-bold small mb-3">NAVEGUE</p>
+
+        <nav class="d-grid gap-3" aria-label="Navegação principal">
+          <a class="btn d-flex align-items-center text-start p-3" href="pages/InformacoesTecnicas/InformacoesTecnicas.html">
+            <span class="me-3 text-purple flex-shrink-0" aria-hidden="true">&#9432;</span>
+            <span><strong class="d-block">Sobre o SquadHub</strong><small class="d-block text-secondary">Conheça a plataforma</small></span>
           </a>
-          <a class="btn" href="pages/Cadastro/cadastro.html">
-            CADASTRE-SE
+
+        </nav>
+
+        <div class="mt-auto pt-4 border-top border-secondary">
+          <p class="text-secondary small mb-3">Junte-se ao seu próximo squad</p>
+          <a class="btn btn-purple d-flex align-items-center justify-content-center mb-2 p-3" href="pages/Cadastro/cadastro.html">
+            <span class="me-2" aria-hidden="true">&#43;</span> Criar usuário
+          </a>
+          <a class="btn d-flex align-items-center justify-content-center p-3" href="pages/EmBreve/EmBreve.html">
+            Entrar / Login
           </a>
         </div>
+
+        <div class="pt-3 text-secondary small">
+          <span>Encontre sua squad. Jogue junto.</span>
+        </div>
+
       </div>
     </div>
 
   </header>
 
- 
+
   <main class="container  flex-grow-1 d-flex align-items-center">
     <div class="row">
       <!-- A partir de lg  -->

@@ -171,21 +171,7 @@ section a:hover {
 /* =========================================
    TEXTO DOS LINKS
 ========================================= */
-section a::before {
-    content: "HOME";
-}
-section a[href*="Cadastro"]::before {
-    content: "CADASTRO";
-}
-section a[href*="InformacoesTecnicas"]::before {
-    content: "INFORMAÇÕES TÉCNICAS";
-}
-section a[href*="RetornoCadastro"]::before {
-    content: "RETORNO DO CADASTRO";
-}
-section a[href*="ConteudoAdicional"]::before {
-    content: "CONTEÚDO ADICIONAL";
-}
+
 /* =========================================
    RESPONSIVIDADE
 ========================================= */

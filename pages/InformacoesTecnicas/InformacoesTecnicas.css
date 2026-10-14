@@ -21,10 +21,24 @@
 ========================================= */
 body {
     min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Fredoka', sans-serif;
     color: var(--branco);
     background: var(--fundo);
     line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
 }
 /* =========================================
    HEADER
@@ -174,6 +188,7 @@ body {
     margin-bottom: 18px;
     color: var(--texto);
     font-size: 1.05rem;
+    line-height: 1.8;
 }
 /* =========================================
    TECNOLOGIAS
@@ -184,8 +199,8 @@ body {
     gap: 18px;
 }
 .card-tecnologia {
-    flex: 1 1 250px;
-    min-width: 250px;
+    flex: 1 1 280px;
+    min-width: 0;
     padding: 28px;
     display: flex;
     align-items: flex-start;
@@ -213,9 +228,19 @@ body {
 }
 .card-conteudo h3 {
     margin-bottom: 7px;
+    font-size: 1.2rem;
+    line-height: 1.25;
 }
 .card-conteudo p {
+    margin-bottom: 0;
     color: var(--texto-fraco);
+    line-height: 1.7;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--roxo-claro);
+    outline-offset: 3px;
 }
 /* =========================================
    ESTRUTURA
@@ -359,4 +384,92 @@ body {
     .introducao h1 {
         font-size: 2.1rem;
     }
+}
+
+/* Navegacao fixa no tema SquadHub */
+.menu-toggle-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1035;
+    display: flex;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    border-radius: 8px;
+}
+
+.menu-toggle-button:hover,
+.menu-toggle-button:focus {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-icon span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.desktop-nav {
+    position: fixed;
+    top: 24px;
+    right: 32px;
+    z-index: 1035;
+}
+
+.desktop-nav .btn-outline {
+    color: #fff;
+    background-color: #3b1555;
+    border: 1px solid #a020f0;
+}
+
+.desktop-nav .btn-outline:hover {
+    color: #fff;
+    background-color: #8a1bd1;
+}
+
+.squad-menu {
+    color: #fff;
+    background: radial-gradient(circle at top right, rgba(160, 32, 240, 0.25), transparent 45%), #111;
+}
+
+.squad-menu .menu-page-link {
+    color: #fff;
+    background-color: #30203f;
+    border: 1px solid #8b3dff;
+    text-decoration: none;
+}
+
+.squad-menu .menu-page-link:hover {
+    color: #fff;
+    background-color: #512477;
+}
+
+.text-purple {
+    color: #c66bff;
+}
+
+.btn-purple {
+    color: #fff;
+    background-color: #a020f0;
+    border-color: #a020f0;
+}
+
+.btn-purple:hover {
+    color: #fff;
+    background-color: #8a1bd1;
+    border-color: #8a1bd1;
 }

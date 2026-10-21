@@ -176,4 +176,61 @@ body {
   border-color: #8a1bd1;
 }
 
+/* Modal de disponibilidade dos lobbies */
+.modal-lobby {
+  overflow: hidden;
+  border: 1px solid rgba(160, 32, 240, 0.65);
+  border-radius: 14px;
+  background: radial-gradient(circle at top right, rgba(160, 32, 240, 0.25), transparent 48%), #111;
+  box-shadow: 0 0 36px rgba(160, 32, 240, 0.24);
+}
+
+.modal-lobby .modal-header,
+.modal-lobby .modal-footer {
+  border-color: rgba(198, 107, 255, 0.2);
+}
+
+.modal-lobby .modal-title {
+  color: #fff;
+  font-weight: 700;
+}
+
+.modal-lobby .modal-body p {
+  color: #d4d4d4;
+  line-height: 1.6;
+}
+
+.modal-lobby-destaque {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: #c66bff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.modal-lobby-destaque img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.modal-lobby .btn-purple {
+  background-color: #a020f0;
+}
+
+.modal-lobby .btn-purple:hover {
+  background-color: #8a1bd1;
+}
+
+.modal-lobby .btn-continuar {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.modal-lobby .btn-continuar:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
 

@@ -43,13 +43,6 @@ body {
    APRESENTAÇÃO
 ========================= */
 
-.cadastro-apresentacao {
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding-left: 60px;
-}
-
 .cadastro-texto h1 {
     margin-bottom: 8px;
     font-size: 31px;
@@ -77,10 +70,6 @@ body {
     max-width: 440px;
 }
 
-.formulario-titulo {
-    margin-bottom: 25px;
-}
-
 .formulario-titulo h2 {
     margin: 0;
     font-size: 32px;
@@ -102,10 +91,6 @@ body {
 /* =========================
    CAMPOS
 ========================= */
-
-.campo {
-    margin-bottom: 28px;
-}
 
 .campo .form-label {
     display: flex;
@@ -372,37 +357,13 @@ body {
    RESPONSIVIDADE
 ========================= */
 
-@media (max-width: 991.98px) {
-    .cadastro-apresentacao {
-        justify-content: center;
-        padding: 40px 20px 0;
-        text-align: center;
-    }
-
-    .cadastro-formulario {
-        padding: 30px 25px 50px;
-    }
-
-    .formulario {
-        width: 100%;
-    }
-}
-
 @media (max-width: 480px) {
-    .cadastro-apresentacao {
-        padding-top: 30px;
-    }
-
     .cadastro-texto h1 {
         font-size: 26px;
     }
 
     .cadastro-texto p {
         font-size: 16px;
-    }
-
-    .cadastro-formulario {
-        padding: 25px 18px 40px;
     }
 
     .formulario-titulo h2 {

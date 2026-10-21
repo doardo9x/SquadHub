@@ -1,61 +1,53 @@
-// Campos de senha
+// Campos do formulário
 const senha = document.getElementById("senha");
 const confirmarSenha = document.getElementById("confirmar-senha");
 const feedbackSenhas = document.getElementById("feedback-senhas");
 const requisitosSenha = document.getElementById("requisitos-senha");
 
-// Lista dos requisitos e suas regras
-const requisitos = [
-    {
-        id: "req-tamanho",
-        validar: valor => valor.length >= 8
-    },
-    {
-        id: "req-maiuscula",
-        validar: valor => /[A-Z]/.test(valor)
-    },
-    {
-        id: "req-minuscula",
-        validar: valor => /[a-z]/.test(valor)
-    },
-    {
-        id: "req-numero",
-        validar: valor => /[0-9]/.test(valor)
-    },
-    {
-        id: "req-especial",
-        validar: valor => /[^A-Za-z0-9]/.test(valor)
-    }
+// Lista de requisitos e as regras usadas para verificá-los
+const listaRequisitos = 
+[
+    { id: "req-tamanho", minimo: 8 },
+    { id: "req-maiuscula", padrao: /[A-Z]/ },
+    { id: "req-minuscula", padrao: /[a-z]/ },
+    { id: "req-numero", padrao: /[0-9]/ },
+    { id: "req-especial", padrao: /[^A-Za-z0-9]/ }
 ];
 
-// Atualiza a aparência dos requisitos da senha
+// Atualiza a lista de requisitos conforme a senha é digitada
 function verificarRequisitosSenha() {
-    requisitos.forEach(requisito => {
+    const valor = senha.value;
+
+    for (let i = 0; i < listaRequisitos.length; i++) {
+        const requisito = listaRequisitos[i];
         const elemento = document.getElementById(requisito.id);
-        const cumprido = requisito.validar(senha.value);
+        let cumprido;
+
+        if (requisito.minimo) {
+            cumprido = valor.length >= requisito.minimo;
+        } else {
+            cumprido = requisito.padrao.test(valor);
+        }
 
         elemento.classList.toggle("valido", cumprido);
-    });
+    }
 }
 
-// Confere se as senhas são iguais
+// Compara a senha com a confirmação
 function verificarSenhas() {
     const valorSenha = senha.value;
     const valorConfirmacao = confirmarSenha.value;
 
-    // Limpa o estado anterior
     confirmarSenha.setCustomValidity("");
     confirmarSenha.classList.remove("senha-invalida", "senha-valida");
     feedbackSenhas.classList.remove("invalido", "valido");
     feedbackSenhas.textContent = "";
 
-    // Não mostra avisos enquanto a confirmação estiver vazia
-    if (!valorConfirmacao) {
+    if (valorConfirmacao === "") {
         return;
     }
 
-    // Não compara enquanto a senha original estiver vazia
-    if (!valorSenha) {
+    if (valorSenha === "") {
         feedbackSenhas.textContent = "Digite a senha acima primeiro.";
         feedbackSenhas.classList.add("invalido");
         confirmarSenha.setCustomValidity("Digite a senha original primeiro.");
@@ -63,7 +55,6 @@ function verificarSenhas() {
         return;
     }
 
-    // Senhas diferentes
     if (valorSenha !== valorConfirmacao) {
         feedbackSenhas.textContent = "✕ As senhas não coincidem.";
         feedbackSenhas.classList.add("invalido");
@@ -72,42 +63,54 @@ function verificarSenhas() {
         return;
     }
 
-    // Senhas iguais
     feedbackSenhas.textContent = "✓ As senhas coincidem.";
     feedbackSenhas.classList.add("valido");
     confirmarSenha.classList.add("senha-valida");
 }
 
-// Exibe ou oculta a senha ao clicar no olho
-document.querySelectorAll("[data-toggle-password]").forEach(botao => {
-    botao.addEventListener("click", () => {
-        const campoId = botao.dataset.togglePassword;
-        const campo = document.getElementById(campoId);
+// Mostra ou esconde o campo de senha
+function alternarSenha(campo, botao) {
+    const mostrar = campo.type === "password";
+    const iconeOlho = botao.querySelector(".icone-olho");
+    const iconeOlhoFechado = botao.querySelector(".icone-olho-fechado");
 
-        const exibirSenha = campo.type === "password";
+    if (mostrar) {
+        campo.type = "text";
+        botao.setAttribute("aria-label", "Ocultar senha");
+        botao.setAttribute("aria-pressed", "true");
+        iconeOlho.classList.add("d-none");
+        iconeOlhoFechado.classList.remove("d-none");
+    } else {
+        campo.type = "password";
+        botao.setAttribute("aria-label", "Exibir senha");
+        botao.setAttribute("aria-pressed", "false");
+        iconeOlho.classList.remove("d-none");
+        iconeOlhoFechado.classList.add("d-none");
+    }
+}
 
-        campo.type = exibirSenha ? "text" : "password";
+// Liga cada botão de olho ao campo correspondente
+const botaoSenha = document.querySelector('[data-toggle-password="senha"]');
+const botaoConfirmarSenha = document.querySelector('[data-toggle-password="confirmar-senha"]');
 
-        botao.setAttribute("aria-pressed", String(exibirSenha));
-        botao.setAttribute(
-            "aria-label",
-            exibirSenha ? "Ocultar senha" : "Exibir senha"
-        );
-
-        const iconeOlho = botao.querySelector(".icone-olho");
-        const iconeOlhoFechado = botao.querySelector(".icone-olho-fechado");
-
-        iconeOlho.classList.toggle("d-none", exibirSenha);
-        iconeOlhoFechado.classList.toggle("d-none", !exibirSenha);
-    });
+botaoSenha.addEventListener("click", function () {
+    alternarSenha(senha, botaoSenha);
 });
 
-// Valida os requisitos ao digitar a senha
-senha.addEventListener("input", () => {
-    requisitosSenha.classList.toggle("visivel", senha.value.length > 0);
+botaoConfirmarSenha.addEventListener("click", function () {
+    alternarSenha(confirmarSenha, botaoConfirmarSenha);
+});
+
+// Atualiza os requisitos e a confirmação enquanto a pessoa digita
+senha.addEventListener("input", function () {
+    if (senha.value.length > 0) {
+        requisitosSenha.classList.add("visivel");
+    } else {
+        requisitosSenha.classList.remove("visivel");
+    }
+
     verificarRequisitosSenha();
     verificarSenhas();
 });
 
-// Compara as senhas ao digitar a confirmação
 confirmarSenha.addEventListener("input", verificarSenhas);

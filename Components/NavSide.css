@@ -1,0 +1,11 @@
+.navbar-toggler { position: fixed; top: 1rem; right: 1rem; z-index: 1030; border: 0; padding: 0; box-shadow: none; }
+.navbar-toggler:focus { box-shadow: none; }
+.squad-menu { color: #fff; background: radial-gradient(circle at top right, rgba(160, 32, 240, .25), transparent 45%), #111; }
+.menu-logo { width: 90px; height: auto; }
+.menu-nav-link { color: #fff; background: rgba(255, 255, 255, .04); }
+.menu-nav-link:hover { color: #fff; background: rgba(160, 32, 240, .16); }
+.menu-nav-icon { width: 21px; height: 21px; margin-right: 1rem; flex: 0 0 auto; stroke: #c66bff; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.btn-purple { color: #fff; background: #a020f0; }
+.btn-purple:hover { color: #fff; background: #8a1bd1; }
+.menu-login-link { color: #fff; border: 1px solid rgba(255, 255, 255, .35); }
+.menu-login-link:hover { color: #fff; background: rgba(255, 255, 255, .12); }

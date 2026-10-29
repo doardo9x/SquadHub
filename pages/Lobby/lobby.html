@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090810">
+  <title>Lobby | SquadHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="../../src/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="lobby.css" rel="stylesheet">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar d-none d-xl-flex flex-column p-3">
+      <a class="brand d-flex flex-column align-items-center text-decoration-none mb-4" href="../../index.html" aria-label="SquadHub, página inicial">
+        <img class="brand-logo" src="../../img/SquadHub Logo.png" alt="SquadHub">
+        <span class="brand-caption">Encontre players para jogar</span>
+      </a>
+      <nav class="nav nav-pills flex-column gap-2" aria-label="Navegação principal">
+        <span class="sidebar-label">NAVEGAÇÃO</span>
+        <a class="nav-link active" href="lobby.html" aria-current="page"><i class="bi bi-house-door"></i>Lobby</a>
+        <a class="nav-link" href="../EmBreve/EmBreve.html"><i class="bi bi-people"></i>Grupos</a>
+        <a class="nav-link" href="../EmBreve/EmBreve.html"><i class="bi bi-search"></i>Buscar jogadores</a>
+        <a class="nav-link" href="../EmBreve/EmBreve.html"><i class="bi bi-gear"></i>Configurações</a>
+        <span class="sidebar-label mt-4">SOBRE O SQUADHUB</span>
+        <a class="nav-link" href="../ConteudoAdicional/ConteudoAdicional.html"><i class="bi bi-journal-text"></i>Conteúdo adicional</a>
+        <a class="nav-link" href="../InformacoesTecnicas/InformacoesTecnicas.html"><i class="bi bi-info-circle"></i>Informações técnicas</a>
+      </nav>
+      <a class="sidebar-logout mt-auto" href="../../index.html"><i class="bi bi-box-arrow-left"></i>Sair</a>
+    </aside>
+
+    <div class="offcanvas offcanvas-start mobile-menu" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+      <div class="offcanvas-header border-bottom border-secondary">
+        <h2 class="offcanvas-title fs-5" id="mobileMenuLabel">SquadHub</h2>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column">
+        <nav class="nav nav-pills flex-column gap-2" aria-label="Navegação principal">
+          <span class="sidebar-label">NAVEGAÇÃO</span>
+          <a class="nav-link active" href="lobby.html" aria-current="page"><i class="bi bi-house-door"></i>Lobby</a>
+          <a class="nav-link" href="../EmBreve/EmBreve.html"><i class="bi bi-people"></i>Grupos</a>
+          <a class="nav-link" href="../EmBreve/EmBreve.html"><i class="bi bi-search"></i>Buscar jogadores</a>
+          <a class="nav-link" href="../EmBreve/EmBreve.html"><i class="bi bi-gear"></i>Configurações</a>
+          <span class="sidebar-label mt-4">SOBRE O SQUADHUB</span>
+          <a class="nav-link" href="../ConteudoAdicional/ConteudoAdicional.html"><i class="bi bi-journal-text"></i>Conteúdo adicional</a>
+          <a class="nav-link" href="../InformacoesTecnicas/InformacoesTecnicas.html"><i class="bi bi-info-circle"></i>Informações técnicas</a>
+        </nav>
+        <a class="sidebar-logout mt-auto" href="../../index.html"><i class="bi bi-box-arrow-left"></i>Sair</a>
+      </div>
+    </div>
+
+    <div class="main-layout">
+      <header class="topbar d-flex align-items-center justify-content-between px-3 px-md-4">
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn mobile-menu-btn d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Abrir menu"><i class="bi bi-list"></i></button>
+          <a class="mobile-brand d-xl-none text-decoration-none" href="../../index.html">SquadHub</a>
+          <span class="breadcrumb-label d-none d-xl-inline">Seu espaço de jogo</span>
+        </div>
+        <div class="user-menu d-flex align-items-center gap-2">
+          <div class="avatar user-avatar" aria-hidden="true"><i class="bi bi-person-fill"></i></div>
+          <div class="user-details"><span class="user-name">Eduardo Ribeiro</span><span class="online-label"><span class="status-dot"></span> Online</span></div>
+          <button class="btn notification-btn" type="button" aria-label="Notificações"><i class="bi bi-bell"></i><span class="notification-dot"></span></button>
+        </div>
+      </header>
+
+      <main class="container-fluid px-3 px-md-4 py-4">
+        <div class="row g-4">
+          <div class="col-12 col-xl-8">
+            <section class="welcome-banner d-flex align-items-center gap-3 mb-4" aria-labelledby="welcome-title">
+              <div class="welcome-icon d-none d-sm-grid"><i class="bi bi-controller"></i></div>
+              <div class="position-relative">
+                <p class="eyebrow mb-1">BEM-VINDO DE VOLTA</p>
+                <h1 id="welcome-title" class="h3 mb-1">Seu próximo squad começa aqui.</h1>
+                <p class="mb-0">Encontre grupos, conheça jogadores e prepare sua próxima partida.</p>
+              </div>
+              <span class="banner-orb" aria-hidden="true"></span>
+            </section>
+
+            <section class="join-panel p-3 p-md-4 mb-4" aria-labelledby="join-title">
+              <div class="row align-items-center g-3">
+                <div class="col-12 col-lg-5">
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-people-fill join-icon" aria-hidden="true"></i>
+                    <div><h2 id="join-title" class="h5 mb-1">Já tem um código de lobby?</h2><p class="mb-0 small">Digite o código para encontrar seu grupo.</p></div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-7">
+                  <form class="row g-2" action="../EmBreve/EmBreve.html" method="get">
+                    <div class="col"><label class="visually-hidden" for="lobby-code">Código do lobby</label><input id="lobby-code" class="form-control form-control-lg" type="text" name="codigo" placeholder="Ex.: ABCD-1234" maxlength="9" autocomplete="off" required></div>
+                    <div class="col-auto"><button class="btn btn-purple btn-lg h-100" type="submit"><i class="bi bi-box-arrow-in-right me-1"></i>Entrar</button></div>
+                  </form>
+                </div>
+              </div>
+            </section>
+
+            <div id="sugestoes" class="section-heading d-flex align-items-end justify-content-between mb-3">
+              <div><p class="eyebrow mb-1">ENCONTRE SEU PRÓXIMO SQUAD</p><h2 class="h4 mb-0">Lobbies sugeridos</h2></div>
+              <a class="text-link d-none d-sm-inline-flex" href="#jogos">Explorar jogos <i class="bi bi-arrow-down"></i></a>
+            </div>
+
+            <section id="fc" class="game-section mb-4" aria-labelledby="fc-heading">
+              <div class="game-heading d-flex align-items-center gap-3 mb-3">
+                <span class="game-mark game-fc"><i class="bi bi-controller"></i></span>
+                <div><h3 id="fc-heading" class="h5 mb-0">EA SPORTS FC</h3><p class="small mb-0">Monte seu time e entre em campo</p></div>
+                <span class="game-count ms-auto">4 lobbies</span>
+              </div>
+              <div id="fcCarousel" class="carousel slide" data-bs-touch="true" aria-label="Lobbies de EA SPORTS FC">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="row g-3">
+                      <div class="col-6"><article class="lobby-card card-fc h-100"><div class="card-content"><span class="game-chip">FC</span><div class="lobby-info"><h4>Rumo ao Elite</h4><p>4/10 jogadores</p><div class="tag-row"><span>Ranqueado</span><span>PC / Console</span></div></div><div class="card-bottom"><div class="mini-avatars" aria-label="Jogadores no grupo"><span>J</span><span>M</span><span>R</span></div><a class="btn btn-sm btn-purple" href="../EmBreve/EmBreve.html">Entrar <i class="bi bi-arrow-right-short"></i></a></div></div></article></div>
+                      <div class="col-6"><article class="lobby-card card-fc card-fc-two h-100"><div class="card-content"><span class="game-chip">FC</span><div class="lobby-info"><h4>Casual / Diversão</h4><p>7/10 jogadores</p><div class="tag-row"><span>Casual</span><span>PC / Console</span></div></div><div class="card-bottom"><div class="mini-avatars" aria-label="Jogadores no grupo"><span>A</span><span>L</span><span>C</span></div><a class="btn btn-sm btn-purple" href="../EmBreve/EmBreve.html">Entrar <i class="bi bi-arrow-right-short"></i></a></div></div></article></div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="row g-3">
+                      <div class="col-6"><article class="lobby-card card-fc card-fc-three h-100"><div class="card-content"><span class="game-chip">FC</span><div class="lobby-info"><h4>Pro Clubs</h4><p>3/10 jogadores</p><div class="tag-row"><span>Pro Clubs</span><span>Console</span></div></div><div class="card-bottom"><div class="mini-avatars" aria-label="Jogadores no grupo"><span>P</span><span>G</span><span>T</span></div><a class="btn btn-sm btn-purple" href="../EmBreve/EmBreve.html">Entrar <i class="bi bi-arrow-right-short"></i></a></div></div></article></div>
+                      <div class="col-6"><article class="lobby-card card-fc card-fc-two h-100"><div class="card-content"><span class="game-chip">FC</span><div class="lobby-info"><h4>Partida entre amigos</h4><p>5/10 jogadores</p><div class="tag-row"><span>Casual</span><span>Console</span></div></div><div class="card-bottom"><div class="mini-avatars" aria-label="Jogadores no grupo"><span>B</span><span>D</span><span>V</span></div><a class="btn btn-sm btn-purple" href="../EmBreve/EmBreve.html">Entrar <i class="bi bi-arrow-right-short"></i></a></div></div></article></div>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#fcCarousel" data-bs-slide="prev" aria-label="Lobbies anteriores"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#fcCarousel" data-bs-slide="next" aria-label="Próximos lobbies"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+              </div>
+            </section>
+
+            <section id="jogos" class="game-section mb-4" aria-labelledby="cs-heading">
+              <div class="game-heading d-flex align-items-center gap-3 mb-3"><span class="game-mark game-cs"><i class="bi bi-crosshair"></i></span><div><h3 id="cs-heading" class="h5 mb-0">Counter-Strike 2</h3><p class="small mb-0">Tática, estratégia e muita ação</p></div><span class="game-count ms-auto">3 lobbies</span></div>
+              <div id="csCarousel" class="carousel slide" data-bs-touch="true" aria-label="Lobbies de Counter-Strike 2">
+                <div class="carousel-inner">
+                  <div class="carousel-item active"><div class="row g-3">
+                    <div class="col-6"><article class="lobby-card card-cs h-100"><div class="card-content"><span class="game-chip">CS2</span><div class="lobby-info"><h4>Competitivo</h4><p>5/10 jogadores</p><div class="tag-row"><span>Ranqueado</span><span>PC</span></div></div><div class="card-bottom"><div class="mini-avatars"><span>N</span><span>F</span><span>R</span></div><a class="btn btn-sm btn-purple" href="../EmBreve/EmBreve.html">Entrar <i class="bi bi-arrow-right-short"></i></a></div></div></article></div>
+                    <div class="col-6"><article class="lobby-card card-cs card-cs-two h-100"><div class="card-content"><span class="game-chip">CS2</span><div class="lobby-info"><h4>Casual / Diversão</h4><p>8/10 jogadores</p><div class="tag-row"><span>Casual</span><span>PC</span></div></div><div class="card-bottom"><div class="mini-avatars"><span>C</span><span>V</span><span>J</span></div><a class="btn btn-sm btn-purple" href="../EmBreve/EmBreve.html">Entrar <i class="bi bi-arrow-right-short"></i></a></div></div></article></div>
+                  </div></div>
+                  <div class="carousel-item"><div class="row g-3">
+                    <div class="col-6"><article class="lobby-card card-cs card-cs-three h-100"><div class="card-content"><span class="game-chip">CS2</span><div class="lobby-info"><h4>Aula / Treino</h4><p>4/10 jogadores</p><div class="tag-row"><span>Treino</span><span>PC</span></div></div><div class="card-bottom"><div class="mini-avatars"><span>G</span><span>H</span><span>M</span></div><a class="btn btn-sm btn-purple" href="../EmBreve/EmBreve.html">Entrar <i class="bi bi-arrow-right-short"></i></a></div></div></article></div>
+                  </div></div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#csCarousel" data-bs-slide="prev" aria-label="Lobbies anteriores"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#csCarousel" data-bs-slide="next" aria-label="Próximos lobbies"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+              </div>
+            </section>
+
+            <section id="valorant" class="game-section mb-4" aria-labelledby="valorant-heading">
+              <div class="game-heading d-flex align-items-center gap-3 mb-3"><span class="game-mark game-valorant"><i class="bi bi-lightning-charge-fill"></i></span><div><h3 id="valorant-heading" class="h5 mb-0">VALORANT</h3><p class="small mb-0">Coordenação e habilidade em equipe</p></div><span class="game-count ms-auto">3 lobbies</span></div>
+              <div id="valorantCarousel" class="carousel slide" data-bs-touch="true" aria-label="Lobbies de VALORANT">
+                <div class="carousel-inner">
+                  <div class="carousel-item active"><div class="row g-3">
+                    <div class="col-6"><article class="lobby-card card-valorant h-100"><div class="card-content"><span class="game-chip">V</span><div class="lobby-info"><h4>Ranked</h4><p>6/10 jogadores</p><div class="tag-row"><span>Ranqueado</span><span>PC</span></div></div><div class="card-bottom"><div class="mini-avatars"><span>A</span><span>M</span><span>V</span></div><a class="btn btn-sm btn-purple" href="../EmBreve/EmBreve.html">Entrar <i class="bi bi-arrow-right-short"></i></a></div></div></article></div>
+                    <div class="col-6"><article class="lobby-card card-valorant card-valorant-two h-100"><div class="card-content"><span class="game-chip">V</span><div class="lobby-info"><h4>Casual / Diversão</h4><p>4/10 jogadores</p><div class="tag-row"><span>Casual</span><span>PC</span></div></div><div class="card-bottom"><div class="mini-avatars"><span>R</span><span>S</span><span>T</span></div><a class="btn btn-sm btn-purple" href="../EmBreve/EmBreve.html">Entrar <i class="bi bi-arrow-right-short"></i></a></div></div></article></div>
+                  </div></div>
+                  <div class="carousel-item"><div class="row g-3">
+                    <div class="col-6"><article class="lobby-card card-valorant card-valorant-three h-100"><div class="card-content"><span class="game-chip">V</span><div class="lobby-info"><h4>Treino e Evolução</h4><p>3/10 jogadores</p><div class="tag-row"><span>Treino</span><span>PC</span></div></div><div class="card-bottom"><div class="mini-avatars"><span>J</span><span>D</span><span>L</span></div><a class="btn btn-sm btn-purple" href="../EmBreve/EmBreve.html">Entrar <i class="bi bi-arrow-right-short"></i></a></div></div></article></div>
+                  </div></div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#valorantCarousel" data-bs-slide="prev" aria-label="Lobbies anteriores"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#valorantCarousel" data-bs-slide="next" aria-label="Próximos lobbies"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+              </div>
+            </section>
+          </div>
+
+          <aside class="col-12 col-xl-4" aria-label="Atividade e ações do lobby">
+            <div class="row g-3">
+              <div class="col-12 col-md-6 col-xl-12"><section class="panel-card h-100" aria-labelledby="online-heading">
+                <div class="panel-heading d-flex justify-content-between align-items-center"><h2 id="online-heading" class="h6 mb-0"><span class="status-dot me-2"></span>Jogadores online</h2><span class="muted-number">128</span></div>
+                <ul class="online-list list-unstyled mb-0">
+                  <li><div class="avatar avatar-cyan">Z</div><div class="online-person"><strong>zNinja</strong><span>Jogando CS2</span></div><i class="bi bi-crosshair player-game-icon" aria-hidden="true"></i></li>
+                  <li><div class="avatar avatar-purple">L</div><div class="online-person"><strong>Lukz</strong><span>No lobby - EA FC</span></div><i class="bi bi-controller player-game-icon" aria-hidden="true"></i></li>
+                  <li><div class="avatar avatar-red">M</div><div class="online-person"><strong>M4thz</strong><span>Jogando Valorant</span></div><i class="bi bi-lightning-charge-fill player-game-icon" aria-hidden="true"></i></li>
+                  <li><div class="avatar avatar-green">C</div><div class="online-person"><strong>CarolFPS</strong><span>Online agora</span></div><i class="bi bi-person-plus-fill player-game-icon" aria-hidden="true"></i></li>
+                  <li><div class="avatar avatar-orange">G</div><div class="online-person"><strong>iTzGabs</strong><span>No lobby - CS2</span></div><i class="bi bi-crosshair player-game-icon" aria-hidden="true"></i></li>
+                </ul>
+                <a class="text-link mt-3 d-inline-flex" href="../EmBreve/EmBreve.html">Ver jogadores <i class="bi bi-chevron-right"></i></a>
+              </section></div>
+              <div class="col-12 col-md-6 col-xl-12"><section class="panel-card h-100" aria-labelledby="featured-heading">
+                <div class="panel-heading"><h2 id="featured-heading" class="h6 mb-0"><i class="bi bi-star-fill text-purple me-2"></i>Lobby em destaque</h2></div>
+                <div class="featured-lobby"><div class="featured-art"><i class="bi bi-lightning-charge-fill"></i></div><div class="featured-copy"><span class="featured-game">VALORANT</span><h3>Ranked - Diamante+</h3><p class="mb-2"><i class="bi bi-people me-1"></i> 5/5 jogadores <span class="ms-2"><i class="bi bi-mic-fill me-1"></i>Com voz</span></p><button class="btn btn-secondary btn-sm w-100" type="button" disabled aria-label="Lobby cheio">Lobby cheio</button></div></div>
+              </section></div>
+              <div class="col-12"><section class="panel-card" aria-labelledby="quick-heading">
+                <div class="panel-heading"><h2 id="quick-heading" class="h6 mb-0"><i class="bi bi-lightning-charge-fill text-purple me-2"></i>Ações rápidas</h2></div>
+                <a href="../EmBreve/EmBreve.html" class="quick-action"><span class="quick-icon"><i class="bi bi-plus-lg"></i></span><span><strong>Criar um lobby</strong><small>Monte seu grupo e comece a jogar</small></span><i class="bi bi-chevron-right quick-chevron"></i></a>
+                <a href="../EmBreve/EmBreve.html" class="quick-action"><span class="quick-icon"><i class="bi bi-search"></i></span><span><strong>Buscar jogadores</strong><small>Encontre players do seu nível</small></span><i class="bi bi-chevron-right quick-chevron"></i></a>
+                <a href="#sugestoes" class="quick-action"><span class="quick-icon"><i class="bi bi-grid"></i></span><span><strong>Explorar lobbies</strong><small>Veja grupos por jogo</small></span><i class="bi bi-chevron-right quick-chevron"></i></a>
+              </section></div>
+            </div>
+          </aside>
+        </div>
+      </main>
+      <footer class="site-footer text-center py-4">SquadHub <span class="text-purple px-1">&middot;</span> Encontre players para jogar</footer>
+    </div>
+  </div>
+  <script src="../../src/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

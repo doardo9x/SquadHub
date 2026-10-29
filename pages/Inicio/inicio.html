@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090810">
+  <title>Início | SquadHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="../../src/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../Lobby/lobby.css" rel="stylesheet">
+  <link href="inicio.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../Components/Aside.css">
+</head>
+<body>
+  <div class="app-shell">
+    <button class="btn btn-dark position-fixed top-0 start-0 m-3 z-3" type="button" data-aside-toggle
+      data-bs-toggle="offcanvas" data-bs-target="#asideMenu" aria-controls="asideMenu" aria-label="Abrir menu">
+      <i class="bi bi-list" aria-hidden="true"></i>
+    </button>
+    <div id="aside-compartilhado"></div>
+
+
+    <div class="main-layout">
+      <main class="container-fluid px-3 px-md-4 py-4 home-main d-flex align-items-center">
+        <div class="row home-layout justify-content-center align-items-center g-4 w-100">
+          <div class="col-12">
+            <section class="home-hero text-center" aria-labelledby="home-title">
+              <div class="mb-3"><img src="../../img/SquadHub Logo.png" alt="Logo SquadHub" class="home-logo img-fluid"></div>
+              <h1 id="home-title" class="home-title">SUA PRÓXIMA PARTIDA <span>COMEÇA AQUI!</span></h1>
+              <p class="home-description">Hub para jogadores encontrarem outras pessoas para jogar, seja para formar equipes ou enfrentar outros players.</p>
+              <div class="home-status d-none d-lg-block">
+                <p><span class="home-status-dot"></span>1.284 jogadores online</p>
+                <p><span class="home-status-dot"></span>247 lobbies disponíveis agora</p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+      <footer class="site-footer text-center py-4">SquadHub <span class="text-purple px-1">·</span> Encontre players para jogar</footer>
+    </div>
+  </div>
+  <script src="../../src/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../Components/Aside.js"></script>
+</body>
+</html>

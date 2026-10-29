@@ -5,7 +5,7 @@ const Footer = `
         <strong>SquadHub</strong>
         <p class="mb-0 text-secondary">Encontre sua squad. Jogue junto.</p>
       </div>
-      <p class="mb-0 text-secondary">Projeto FIAP &middot; 2026</p>
+      <p class="mb-0 text-secondary">Projeto FIAP · 2026</p>
     </div>
   </footer>
 `;

@@ -11,60 +11,14 @@
   <link href="../../src/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link href="lobby.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../Components/Aside.css">
 </head>
 <body>
   <div class="app-shell">
-    <aside class="sidebar d-none d-xl-flex flex-column p-3">
-      <a class="brand d-flex flex-column align-items-center text-decoration-none mb-4" href="../../index.html" aria-label="SquadHub, página inicial">
-        <img class="brand-logo" src="../../img/SquadHub Logo.png" alt="SquadHub">
-        <span class="brand-caption">Encontre players para jogar</span>
-      </a>
-      <nav class="nav nav-pills flex-column gap-2" aria-label="Navegação principal">
-        <span class="sidebar-label">NAVEGAÇÃO</span>
-        <a class="nav-link active" href="lobby.html" aria-current="page"><i class="bi bi-house-door"></i>Lobby</a>
-        <a class="nav-link" href="../EmBreve/EmBreve.html"><i class="bi bi-people"></i>Grupos</a>
-        <a class="nav-link" href="../EmBreve/EmBreve.html"><i class="bi bi-search"></i>Buscar jogadores</a>
-        <a class="nav-link" href="../EmBreve/EmBreve.html"><i class="bi bi-gear"></i>Configurações</a>
-        <span class="sidebar-label mt-4">SOBRE O SQUADHUB</span>
-        <a class="nav-link" href="../ConteudoAdicional/ConteudoAdicional.html"><i class="bi bi-journal-text"></i>Conteúdo adicional</a>
-        <a class="nav-link" href="../InformacoesTecnicas/InformacoesTecnicas.html"><i class="bi bi-info-circle"></i>Informações técnicas</a>
-      </nav>
-      <a class="sidebar-logout mt-auto" href="../../index.html"><i class="bi bi-box-arrow-left"></i>Sair</a>
-    </aside>
-
-    <div class="offcanvas offcanvas-start mobile-menu" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
-      <div class="offcanvas-header border-bottom border-secondary">
-        <h2 class="offcanvas-title fs-5" id="mobileMenuLabel">SquadHub</h2>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
-      </div>
-      <div class="offcanvas-body d-flex flex-column">
-        <nav class="nav nav-pills flex-column gap-2" aria-label="Navegação principal">
-          <span class="sidebar-label">NAVEGAÇÃO</span>
-          <a class="nav-link active" href="lobby.html" aria-current="page"><i class="bi bi-house-door"></i>Lobby</a>
-          <a class="nav-link" href="../EmBreve/EmBreve.html"><i class="bi bi-people"></i>Grupos</a>
-          <a class="nav-link" href="../EmBreve/EmBreve.html"><i class="bi bi-search"></i>Buscar jogadores</a>
-          <a class="nav-link" href="../EmBreve/EmBreve.html"><i class="bi bi-gear"></i>Configurações</a>
-          <span class="sidebar-label mt-4">SOBRE O SQUADHUB</span>
-          <a class="nav-link" href="../ConteudoAdicional/ConteudoAdicional.html"><i class="bi bi-journal-text"></i>Conteúdo adicional</a>
-          <a class="nav-link" href="../InformacoesTecnicas/InformacoesTecnicas.html"><i class="bi bi-info-circle"></i>Informações técnicas</a>
-        </nav>
-        <a class="sidebar-logout mt-auto" href="../../index.html"><i class="bi bi-box-arrow-left"></i>Sair</a>
-      </div>
-    </div>
+    <div id="aside-compartilhado"></div>
 
     <div class="main-layout">
-      <header class="topbar d-flex align-items-center justify-content-between px-3 px-md-4">
-        <div class="d-flex align-items-center gap-2">
-          <button class="btn mobile-menu-btn d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Abrir menu"><i class="bi bi-list"></i></button>
-          <a class="mobile-brand d-xl-none text-decoration-none" href="../../index.html">SquadHub</a>
-          <span class="breadcrumb-label d-none d-xl-inline">Seu espaço de jogo</span>
-        </div>
-        <div class="user-menu d-flex align-items-center gap-2">
-          <div class="avatar user-avatar" aria-hidden="true"><i class="bi bi-person-fill"></i></div>
-          <div class="user-details"><span class="user-name">Eduardo Ribeiro</span><span class="online-label"><span class="status-dot"></span> Online</span></div>
-          <button class="btn notification-btn" type="button" aria-label="Notificações"><i class="bi bi-bell"></i><span class="notification-dot"></span></button>
-        </div>
-      </header>
+      <div id="header-compartilhado"></div>
 
       <main class="container-fluid px-3 px-md-4 py-4">
         <div class="row g-4">
@@ -88,9 +42,9 @@
                   </div>
                 </div>
                 <div class="col-12 col-lg-7">
-                  <form class="row g-2" action="../EmBreve/EmBreve.html" method="get">
-                    <div class="col"><label class="visually-hidden" for="lobby-code">Código do lobby</label><input id="lobby-code" class="form-control form-control-lg" type="text" name="codigo" placeholder="Ex.: ABCD-1234" maxlength="9" autocomplete="off" required></div>
-                    <div class="col-auto"><button class="btn btn-purple btn-lg h-100" type="submit"><i class="bi bi-box-arrow-in-right me-1"></i>Em breve</button></div>
+                  <form class="row g-2 align-items-center" action="../EmBreve/EmBreve.html" method="get">
+                    <div class="col"><label class="visually-hidden" for="lobby-code">Código do lobby</label><input id="lobby-code" class="form-control" type="text" name="codigo" placeholder="Ex.: ABCD-1234" maxlength="9" autocomplete="off" required></div>
+                    <div class="col-auto"><button class="btn btn-purple text-nowrap" type="submit"><i class="bi bi-box-arrow-in-right me-1"></i>Em breve</button></div>
                   </form>
                 </div>
               </div>
@@ -189,9 +143,11 @@
           </aside>
         </div>
       </main>
-      <footer class="site-footer text-center py-4">SquadHub <span class="text-purple px-1">&middot;</span> Encontre players para jogar</footer>
+      <footer class="site-footer text-center py-4">SquadHub <span class="text-purple px-1">·</span> Encontre players para jogar</footer>
     </div>
   </div>
   <script src="../../src/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../Components/Header.js"></script>
+  <script src="../../Components/Aside.js"></script>
 </body>
 </html>

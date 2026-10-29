@@ -44,9 +44,6 @@ const sharedAside = `
       <nav class="nav nav-pills flex-column gap-2" aria-label="Navegação principal">
         ${sidebarLinks}
       </nav>
-      <a class="sidebar-logout mt-auto" href="${asideLink("pages/ConteudoAdicional/ConteudoAdicional.html")}">
-        <i class="bi bi-journal-text" aria-hidden="true"></i>Sobre o SquadHub
-      </a>
     </div>
   </div>
 `;
@@ -60,9 +57,6 @@ const fixedSidebar = `
     <nav class="nav nav-pills flex-column gap-2" aria-label="Navegação principal">
       ${sidebarLinks}
     </nav>
-    <a class="sidebar-logout mt-auto" href="${asideLink("pages/ConteudoAdicional/ConteudoAdicional.html")}">
-      <i class="bi bi-journal-text" aria-hidden="true"></i>Sobre o SquadHub
-    </a>
   </aside>
 `;
 

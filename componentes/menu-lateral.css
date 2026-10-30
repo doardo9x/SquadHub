@@ -8,6 +8,77 @@
     background: var(--cor-fundo-menu);
 }
 
+/* Navegação e acesso à conta ocupam áreas independentes */
+.menu-lateral-lobby .menu-navegacao,
+.menu-lateral-compartilhado .menu-navegacao {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-color: var(--cor-borda-roxa) transparent;
+    scrollbar-width: thin;
+}
+
+.menu-lateral-lobby .menu-navegacao::-webkit-scrollbar,
+.menu-lateral-compartilhado .menu-navegacao::-webkit-scrollbar {
+    width: 4px;
+}
+
+.menu-lateral-lobby .menu-navegacao::-webkit-scrollbar-track,
+.menu-lateral-compartilhado .menu-navegacao::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.menu-lateral-lobby .menu-navegacao::-webkit-scrollbar-thumb,
+.menu-lateral-compartilhado .menu-navegacao::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: var(--cor-borda-roxa);
+}
+
+.menu-lateral-lobby .area-autenticacao,
+.menu-lateral-compartilhado .area-autenticacao {
+    margin-top: auto;
+    padding: 1rem .25rem .25rem;
+    border-top: 1px solid var(--cor-borda-suave);
+}
+
+.menu-lateral-lobby .botao-autenticacao-principal,
+.menu-lateral-compartilhado .botao-autenticacao-principal {
+    color: var(--cor-texto-principal);
+    border: 1px solid transparent;
+    background: var(--cor-roxo);
+}
+
+.menu-lateral-lobby .botao-autenticacao-principal:hover,
+.menu-lateral-compartilhado .botao-autenticacao-principal:hover {
+    color: var(--cor-texto-principal);
+    background: var(--cor-roxo-hover);
+}
+
+.menu-lateral-lobby .botao-autenticacao-secundario,
+.menu-lateral-compartilhado .botao-autenticacao-secundario {
+    color: var(--cor-texto-principal);
+    border: 1px solid var(--cor-borda-contorno);
+    background: transparent;
+}
+
+.menu-lateral-lobby .botao-autenticacao-secundario:hover,
+.menu-lateral-compartilhado .botao-autenticacao-secundario:hover {
+    color: var(--cor-texto-principal);
+    background: var(--cor-fundo-menu-hover);
+}
+
+.menu-lateral-lobby .area-autenticacao .btn:focus-visible,
+.menu-lateral-compartilhado .area-autenticacao .btn:focus-visible {
+    outline: 2px solid var(--cor-roxo-claro);
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+.menu-lateral-lobby .area-autenticacao .btn:active,
+.menu-lateral-compartilhado .area-autenticacao .btn:active {
+    filter: brightness(.9);
+}
+
 .menu-lateral-fixo .layout-principal { margin-left: 220px; }
 
 /* Aparência compartilhada entre o menu móvel e o menu fixo */
@@ -20,12 +91,6 @@
     max-width: 100%;
     height: auto;
     object-fit: contain;
-}
-
-.menu-lateral-lobby .legenda-marca,
-.menu-lateral-compartilhado .legenda-marca {
-    color: var(--cor-texto-secundario);
-    font-size: .66rem;
 }
 
 .menu-lateral-lobby .nav-link,
@@ -46,6 +111,7 @@
 
 .menu-lateral-lobby .rotulo-menu,
 .menu-lateral-compartilhado .rotulo-menu {
+    display: block;
     padding: .25rem .75rem;
     color: var(--cor-texto-secundario);
     font-size: .65rem;
@@ -69,6 +135,11 @@
     --bs-offcanvas-width: 260px;
     color: #f7f4ff;
     background: var(--cor-fundo-menu);
+}
+
+.menu-lateral-compartilhado .offcanvas-body {
+    min-height: 0;
+    overflow: hidden;
 }
 
 /* Em telas menores, o conteúdo ocupa a largura toda */

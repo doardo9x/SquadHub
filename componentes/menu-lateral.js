@@ -29,7 +29,7 @@ const gruposNavegacao = [
 
 function criarLinksNavegacao() {
   return gruposNavegacao.map((grupo, indice) => `
-    <span class="rotulo-menu${indice ? " mt-4" : ""}">${grupo.titulo}</span>
+    <span class="rotulo-menu${indice ? " mt-4" : " mt-2"}">${grupo.titulo}</span>
     ${grupo.itens.map((item) => `
       <a class="nav-link" href="${criarCaminhoProjeto(item.caminho)}">
         <i class="bi ${item.icone}" aria-hidden="true"></i>
@@ -43,8 +43,34 @@ function criarMarca() {
   return `
     <a class="marca d-flex flex-column align-items-center text-decoration-none" href="${criarCaminhoProjeto("index.html")}">
       <img class="logo-marca p-2" src="${criarCaminhoProjeto("imagens/logo-squadhub.png")}" alt="SquadHub">
-      <span class="legenda-marca">Encontre players para jogar</span>
     </a>`;
+}
+
+// Acesso à conta: os mesmos links ficam no rodapé de cada versão do menu.
+function criarAreaAutenticacao() {
+  return `
+    <div class="area-autenticacao flex-shrink-0">
+      <p class="rotulo-menu mb-2">CADASTRO</p>
+      <a class="btn botao-autenticacao-principal d-flex align-items-center justify-content-center gap-2 px-3 py-2 mb-2"
+        href="${criarCaminhoProjeto("paginas/cadastro/cadastro.html")}">
+        <i class="bi bi-person-plus" aria-hidden="true"></i>
+        <span>Criar conta</span>
+      </a>
+      <a class="btn botao-autenticacao-secundario d-flex align-items-center justify-content-center gap-2 px-3 py-2"
+        href="${criarCaminhoProjeto("paginas/login/login.html")}">
+        <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>
+        <span>Entrar</span>
+      </a>
+    </div>`;
+}
+
+function criarAreaNavegacao() {
+  return `
+    <div class="menu-navegacao flex-grow-1">
+      <nav class="nav nav-pills flex-column gap-2" aria-label="Navegação principal">
+        ${criarLinksNavegacao()}
+      </nav>
+    </div>`;
 }
 
 // Montagem: inclui o menu fixo apenas na página Lobby e preserva o menu móvel nas demais.
@@ -55,9 +81,8 @@ if (pontoMontagemMenu) {
     ${paginaLobby ? `
       <aside class="menu-lateral-lobby d-none d-xl-flex flex-column p-2">
         ${criarMarca()}
-        <nav class="nav nav-pills flex-column gap-2" aria-label="Navegação principal">
-          ${criarLinksNavegacao()}
-        </nav>
+        ${criarAreaNavegacao()}
+        ${criarAreaAutenticacao()}
       </aside>` : ""}
 
     <button class="btn btn-dark position-fixed top-0 start-0 m-3 z-3 ${paginaLobby ? "d-xl-none" : ""}" type="button"
@@ -74,10 +99,9 @@ if (pontoMontagemMenu) {
         <button type="button" class="btn-close btn-close-white"
           data-bs-dismiss="offcanvas" aria-label="Fechar menu"></button>
       </div>
-      <div class="offcanvas-body">
-        <nav class="nav nav-pills flex-column gap-2" aria-label="Navegação principal">
-          ${criarLinksNavegacao()}
-        </nav>
+      <div class="offcanvas-body d-flex flex-column px-4 pt-2 pb-4">
+        ${criarAreaNavegacao()}
+        ${criarAreaAutenticacao()}
       </div>
     </div>`;
 

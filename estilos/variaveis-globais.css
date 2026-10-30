@@ -3,9 +3,11 @@
     --cor-fundo-padrao: #0b0b0f;
     --cor-superficie: #17171e;
     --cor-roxo: #a020f0;
+    --cor-roxo-hover: #8a1bd1;
     --cor-roxo-claro: #c66bff;
     --cor-borda-roxa: rgba(198, 107, 255, .16);
     --cor-borda-suave: rgba(255, 255, 255, .08);
+    --cor-borda-contorno: rgba(255, 255, 255, .35);
     --cor-fundo-menu: #09090c;
     --cor-texto-menu: #c5bfdc;
     --cor-fundo-menu-hover: #8e19f622;

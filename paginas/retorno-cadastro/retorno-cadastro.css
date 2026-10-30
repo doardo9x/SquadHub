@@ -1,0 +1,114 @@
+/* Estilos da pagina e seus principais componentes */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+:root {
+
+    --cor-brilho-verde: #1b4332;
+    --cor-fundo-verde-escuro: #0a1512;
+
+}
+
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo e estrutura da confirmacao */
+body {
+    background: radial-gradient(circle at top, var(--cor-brilho-verde), var(--cor-fundo-verde-escuro), var(--cor-fundo-formularios));
+    color: var(--cor-texto-principal);
+    min-height: 100vh;
+    font-family: var(--fonte-principal);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* HEADER */
+.btn {
+    color: white;
+    font-family: var(--fonte-principal);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    padding: 12px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    transition: all 0.6s ease;
+}
+
+.btn:hover {
+    background-color: #3333336a;
+    transform: translateY(-4px);
+}
+
+.texto-colorido {
+    color: var(--cor-roxo-formularios);
+}
+
+.secao-superior h1 {
+    font-size: 1.8rem;
+}
+
+.secao-superior h2 {
+    font-size: 1.6rem;
+}
+
+.secao-superior img {
+    width: 90px;
+}
+
+/* Acao para continuar a navegacao */
+.botao-entrar {
+    display: inline-block;
+    background: #991ec5a2;
+    color: var(--cor-texto-principal);
+    width: 300px;
+    text-decoration: none;
+    font-family: var(--fonte-principal);
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 1px;
+    padding: 12px 40px;
+    border-radius: var(--raio-formularios);
+    transition: all 0.6s ease;
+}
+
+.botao-entrar:hover {
+    color: var(--cor-texto-principal);
+    background-color: #3333336a;
+    transform: translateY(-4px);
+}
+
+.texto-retorno {
+    font-size: 0.95rem;
+    max-width: 500px;
+}
+
+.icones-sociais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.icones-sociais>* {
+    text-align: center;
+    position: relative;
+    min-width: 300px;
+    padding: 0 20px;
+}
+
+.icones-sociais>div:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}

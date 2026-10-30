@@ -1,0 +1,374 @@
+/* Estilos da pagina e seus principais componentes */
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    min-height: 100%;
+    background:
+        radial-gradient(
+            circle at 100% 50%,
+            rgba(153, 30, 197, 0.45) 0%,
+            rgba(80, 10, 100, 0.25) 25%,
+            transparent 55%
+        ),
+        radial-gradient(
+            circle at 0% 100%,
+            rgba(120, 15, 170, 0.35) 0%,
+            transparent 40%
+        ),
+        var(--cor-fundo-formularios);
+}
+
+body {
+    font-family: var(--fonte-principal);
+    color: var(--cor-texto-principal);
+}
+
+/* =========================
+   APRESENTAÇÃO
+========================= */
+
+/* Apresentacao do cadastro */
+.texto-cadastro h1 {
+    margin-bottom: 8px;
+    font-size: 31px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.texto-cadastro h1 span {
+    color: var(--cor-roxo-formularios);
+}
+
+.texto-cadastro p {
+    max-width: 430px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+/* Campos e validacao da senha */
+.formulario {
+    max-width: 440px;
+}
+
+.titulo-formulario h2 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 550;
+    line-height: 1.1;
+}
+
+.titulo-formulario h2 span {
+    color: var(--cor-roxo-formularios);
+}
+
+.titulo-formulario p {
+    margin: 3px 0 0;
+    color: #dddddd;
+    font-size: 9px;
+    font-weight: 300;
+}
+
+/* =========================
+   CAMPOS
+========================= */
+
+.campo-formulario .form-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 7px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.campo-formulario .form-label img {
+    width: 16px;
+    height: 16px;
+}
+
+.campo-formulario .form-control {
+    width: 100%;
+    height: 45px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 6px;
+    background-color: #292929;
+    color: var(--cor-texto-principal);
+    font-family: var(--fonte-principal);
+    font-size: 11px;
+}
+
+.campo-formulario .form-control::placeholder {
+    color: #999999;
+}
+
+.campo-formulario .form-control:focus {
+    background-color: #292929;
+    color: var(--cor-texto-principal);
+    box-shadow: 0 0 0 1px var(--cor-roxo-formularios);
+}
+
+.campo-formulario .form-control:focus-visible {
+    outline: none;
+}
+
+/* =========================
+   Requisitos senha
+========================= */
+
+/* Caixa de requisitos da senha */
+.requisitos-senha {
+    display: none;
+    margin-top: 12px;
+    padding: 16px;
+    background-color: #17171e;
+    border: 1px solid #33313d;
+    border-radius: 12px;
+    transition: border-color 0.2s ease;
+}
+
+.campo-senha:focus-within + .requisitos-senha,
+.requisitos-senha.visivel {
+    display: block;
+}
+
+/* Título */
+.titulo-requisitos {
+    margin: 0 0 12px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Lista de requisitos */
+.requisitos-senha ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Requisito pendente */
+.requisitos-senha li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #b0adb9;
+    font-size: 13px;
+    line-height: 1.5;
+    transition: color 0.2s ease;
+}
+
+/* Indicador visual */
+.icone-requisito {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #65616f;
+    border-radius: 50%;
+    color: transparent;
+    font-size: 11px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+/* Requisito cumprido */
+.requisitos-senha li.valido {
+    color: #d8c0ff;
+}
+
+.requisitos-senha li.valido .icone-requisito {
+    color: #ffffff;
+    background-color: #8b3dff;
+    border-color: #8b3dff;
+}
+
+/* Destaque sutil quando o usuário interage com a senha */
+.requisitos-senha:focus-within {
+    border-color: #8b3dff;
+}
+
+/* Ajustes para telas pequenas */
+/* Ajustes para telas menores */
+@media (max-width: 576px) {
+    .requisitos-senha {
+        padding: 14px;
+    }
+    .titulo-requisitos {
+        font-size: 13px;
+    }
+    .requisitos-senha li {
+        font-size: 12px;
+    }
+}
+
+/* Campo de senha e botão de exibição */
+.campo-senha {
+    width: 100%;
+}
+
+.botao-olho {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: #aaa6b5;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.botao-olho:hover {
+    color: #b47cff;
+    background-color: #292333;
+}
+
+.botao-olho:focus-visible {
+    outline: 2px solid #b47cff;
+    outline-offset: 2px;
+}
+
+/* Feedback de confirmação */
+.retorno-senhas {
+    margin-top: 7px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.retorno-senhas:empty {
+    display: none;
+}
+
+.retorno-senhas.invalido {
+    color: #ff8585;
+}
+
+.retorno-senhas.valido {
+    color: #b47cff;
+}
+
+/* Estado dos campos */
+.campo-senha .form-control.senha-invalida {
+    border-color: #ff8585;
+}
+
+.campo-senha .form-control.senha-valida {
+    border-color: #8b3dff;
+}
+
+/* =========================
+   TERMOS DE USO
+========================= */
+
+.termos {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #aaaaaa;
+    font-size: 7px;
+}
+
+.termos .form-check-input {
+    flex-shrink: 0;
+    width: 13px;
+    height: 13px;
+    margin-top: 0;
+    accent-color: var(--cor-roxo-formularios);
+}
+
+.termos .form-check-input:checked {
+    background-color: var(--cor-roxo-formularios);
+    border-color: var(--cor-roxo-formularios);
+}
+
+.termos .form-check-label {
+    cursor: pointer;
+}
+
+/* =========================
+   BOTÃO DE CADASTRO
+========================= */
+
+/* Acao principal do formulario */
+.botao-cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 52px;
+    margin: 0 auto 25px;
+    border: none;
+    border-radius: var(--raio-formularios);
+    background-color: #72118f;
+    color: var(--cor-texto-principal);
+    font-family: var(--fonte-principal);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.botao-cadastro:hover {
+    background-color: #8d18b0;
+    transform: translateY(-2px);
+}
+
+.botao-cadastro:focus-visible {
+    outline: 2px solid #b47cff;
+    outline-offset: 3px;
+}
+
+.seta {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 480px) {
+    .texto-cadastro h1 {
+        font-size: 26px;
+    }
+    .texto-cadastro p {
+        font-size: 16px;
+    }
+    .titulo-formulario h2 {
+        font-size: 26px;
+    }
+    .titulo-formulario p {
+        font-size: 9px;
+    }
+    .campo-formulario .form-control {
+        padding: 0 14px;
+    }
+    .botao-cadastro {
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,24 @@
+/* Paleta e tipografia compartilhadas pelo SquadHub */
+:root {
+    --cor-fundo-padrao: #0b0b0f;
+    --cor-superficie: #17171e;
+    --cor-roxo: #a020f0;
+    --cor-roxo-claro: #c66bff;
+    --cor-borda-roxa: rgba(198, 107, 255, .16);
+    --cor-borda-suave: rgba(255, 255, 255, .08);
+    --cor-fundo-menu: #09090c;
+    --cor-texto-menu: #c5bfdc;
+    --cor-fundo-menu-hover: #8e19f622;
+    --cor-fundo-menu-ativo: #7414c8;
+    --cor-texto-principal: #ffffff;
+    --cor-texto-padrao: #d8d8df;
+    --cor-texto-secundario: #aaaaaa;
+    --cor-fundo-formularios: #000000;
+    --cor-roxo-formularios: #991ec5;
+    --cor-destaque-formularios: #b47cff;
+    --raio-formularios: 15px;
+    --fonte-principal: "Fredoka", system-ui, sans-serif;
+}
+
+/* Destaque roxo usado em titulos, icones e links */
+.texto-roxo { color: var(--cor-roxo-claro) !important; }

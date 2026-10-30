@@ -1,0 +1,121 @@
+/* Estilos da pagina e seus principais componentes */
+body {
+    min-height: 100vh;
+    color: var(--cor-texto-principal);
+    background: var(--cor-fundo-padrao);
+    font-family: var(--fonte-principal);
+    line-height: 1.6;
+}
+
+.logo-marca {
+    width: 170px;
+}
+
+.sobretitulo,
+.indice-cartao {
+    color: #c66bff;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+/* Cartoes de pesquisa, valores e etapas */
+.cartao-historia,
+.cartao-pesquisa,
+.cartao-valor {
+    color: #fff;
+    background: #17171e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+}
+
+.cartao-pesquisa {
+    background: radial-gradient(circle at 100% 0, rgba(160, 32, 240, 0.25), transparent 55%), #17171e;
+}
+
+.cartao-historia p,
+.cartao-pesquisa p,
+.cartao-valor p,
+.item-roteiro p {
+    color: #c4c4ce;
+    line-height: 1.7;
+}
+
+.numero-pesquisa {
+    color: #fff;
+    font-size: clamp(4rem, 9vw, 6rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.06em;
+}
+
+.numero-pesquisa span {
+    color: #c66bff;
+    font-size: 0.56em;
+}
+
+.cartao-pesquisa .legenda-pesquisa {
+    max-width: 300px;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.divisor-pesquisa {
+    width: 42px;
+    height: 3px;
+    background: #a020f0;
+    border-radius: 99px;
+}
+
+.marca-valor {
+    width: 42px;
+    height: 42px;
+    color: #d8b4fe;
+    background: rgba(160, 32, 240, 0.16);
+    border: 1px solid rgba(198, 107, 255, 0.16);
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.lista-roteiro {
+    overflow: hidden;
+    background: #17171e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+}
+
+.item-roteiro,
+.item-roteiro + .item-roteiro {
+    color: #fff;
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.numero-roteiro {
+    padding-top: 0.2rem;
+    color: #c66bff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.selo-status {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+.status-prototipo {
+    color: #d8b4fe;
+    background: rgba(160, 32, 240, 0.15);
+    border: 1px solid rgba(198, 107, 255, 0.2);
+}
+
+.status-futuro {
+    color: #c4c4ce;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}

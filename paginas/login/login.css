@@ -1,0 +1,154 @@
+/* Estilos da pagina e seus principais componentes */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    background:
+        radial-gradient(circle at 100% 50%, rgba(153, 30, 197, 0.45) 0%, rgba(80, 10, 100, 0.25) 25%, transparent 55%),
+        radial-gradient(circle at 0% 100%, rgba(120, 15, 170, 0.35) 0%, transparent 40%),
+        var(--cor-fundo-formularios);
+}
+
+body {
+    font-family: var(--fonte-principal);
+    color: var(--cor-texto-principal);
+}
+
+/* Apresentacao da pagina de acesso */
+.texto-login h1 {
+    margin-bottom: 8px;
+    font-size: 31px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.texto-login p {
+    max-width: 430px;
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+/* Campos e botoes do formulario */
+.formulario {
+    max-width: 440px;
+}
+
+.titulo-formulario h2 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 550;
+    line-height: 1.1;
+}
+
+.titulo-formulario h2 span {
+    color: var(--cor-roxo-formularios);
+}
+
+.titulo-formulario p {
+    margin: 3px 0 0;
+    color: #dddddd;
+    font-size: 9px;
+    font-weight: 300;
+}
+
+.campo-formulario .form-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 7px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.campo-formulario .form-label img {
+    width: 16px;
+    height: 16px;
+}
+
+.campo-formulario .form-control {
+    width: 100%;
+    height: 45px;
+    padding: 0 18px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background-color: #292929;
+    color: var(--cor-texto-principal);
+    font-family: var(--fonte-principal);
+    font-size: 11px;
+}
+
+.campo-formulario .form-control::placeholder {
+    color: #999999;
+}
+
+.campo-formulario .form-control:focus {
+    border-color: var(--cor-destaque-formularios);
+    background-color: #292929;
+    color: var(--cor-texto-principal);
+    box-shadow: 0 0 0 2px rgba(180, 124, 255, 0.2);
+}
+
+/* Links secundarios e estados de foco */
+.link-roxo {
+    color: var(--cor-destaque-formularios);
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.link-roxo:hover {
+    color: #d2adff;
+    text-decoration: underline;
+}
+
+.link-roxo:focus-visible,
+.botao-entrar:focus-visible {
+    outline: 2px solid var(--cor-destaque-formularios);
+    outline-offset: 3px;
+}
+
+.botao-entrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    margin: 0 auto 22px;
+    border: none;
+    border-radius: var(--raio-formularios);
+    background-color: #72118f;
+    color: var(--cor-texto-principal);
+    font-family: var(--fonte-principal);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.botao-entrar:hover {
+    background-color: #8d18b0;
+    transform: translateY(-2px);
+}
+
+.acao-cadastro {
+    color: #dddddd;
+    font-size: 13px;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 480px) {
+    .texto-login h1 {
+        font-size: 26px;
+    }
+    .texto-login p {
+        font-size: 16px;
+    }
+    .titulo-formulario h2 {
+        font-size: 26px;
+    }
+    .campo-formulario .form-control {
+        padding: 0 14px;
+    }
+}

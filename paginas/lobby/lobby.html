@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090810">
+  <title>Lobby | SquadHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="../../src/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../estilos/variaveis-globais.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="lobby.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../componentes/menu-lateral.css">
+</head>
+<body>
+  <div class="estrutura-aplicacao">
+    <!-- Menu lateral compartilhado -->
+    <div id="ponto-menu-lateral"></div>
+
+    <div class="layout-principal">
+
+      <!-- Cabecalho compartilhado -->
+
+      <div id="ponto-cabecalho"></div>
+      
+      <!-- Conteudo principal da pagina -->
+      
+      <main class="container-fluid px-3 px-md-4 py-4">
+        <div class="row g-4">
+          
+          <div class="col-12 col-xl-8">
+            <section class="painel-entrada p-3 p-md-4 mb-4" aria-labelledby="titulo-entrada-lobby">
+              <div class="row align-items-center g-3">
+                <div class="col-12 col-lg-5">
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-people-fill icone-entrada" aria-hidden="true"></i>
+                    <div><h2 id="titulo-entrada-lobby" class="h5 mb-1">Já tem um código de lobby?</h2><p class="mb-0 small">A busca por código estará disponível em breve.</p></div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-7">
+                  <form class="row g-2 align-items-center" action="../em-breve/em-breve.html" method="get">
+                    <div class="col"><label class="visually-hidden" for="codigo-lobby">Código do lobby</label><input id="codigo-lobby" class="form-control" type="text" name="codigo" placeholder="Ex.: ABCD-1234" maxlength="9" autocomplete="off" required></div>
+                    <div class="col-auto"><button class="btn botao-roxo text-nowrap" type="submit"><i class="bi bi-box-arrow-in-right me-1" aria-hidden="true"></i>Em breve</button></div>
+                  </form>
+                </div>
+              </div>
+            </section>
+
+            <div id="sugestoes" class="cabecalho-secao d-flex align-items-end justify-content-between mb-3">
+              <p class="sobretitulo mb-1">Lobbies sugeridos</p>
+            </div>
+            <!-- Secoes de jogos: cards e trilhas -->
+            <div id="secoes-jogos"></div>
+          </div>
+
+          <aside class="col-12 col-xl-4" aria-label="Atividade e ações do lobby">
+            <div class="row g-3">
+              <div class="col-12">
+                <!-- Ranking: classificacao da comunidade -->
+                <section class="cartao-painel painel-ranking" aria-labelledby="titulo-ranking">
+                  <div class="cabecalho-painel d-flex flex-wrap align-items-center justify-content-between gap-2">
+                    <div>
+                      <h2 id="titulo-ranking" class="h5 mb-1">Ranking da Comunidade</h2>
+                      <p class="small text-white-50 mb-0">Pontuação calculada a partir das vitórias.</p>
+                    </div>
+                    <span class="formula-ranking">100 pontos por vitória + 50 iniciais</span>
+                  </div>
+                  <ol id="ranking-comunidade" class="lista-ranking list-unstyled mb-0" aria-label="Jogadores ordenados por pontuação"></ol>
+                </section>
+              </div>
+              <div class="col-12 col-md-6 col-xl-12 d-none d-lg-block">
+                <section class="cartao-painel" aria-labelledby="titulo-jogadores-online">
+                  <div class="cabecalho-painel d-flex justify-content-between align-items-center"><h2 id="titulo-jogadores-online" class="h6 mb-0"><span class="indicador-status me-2" aria-hidden="true"></span>Jogadores online</h2><span class="numero-secundario">128</span></div>
+                  <ul id="jogadores-online" class="lista-jogadores-online list-unstyled mb-0"></ul>
+                  <a class="link-texto mt-3" href="../em-breve/em-breve.html">Jogadores em breve <i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+                </section>
+              </div>
+              <div class="col-12 d-none d-lg-block">
+                <section class="cartao-painel" aria-labelledby="titulo-acoes-rapidas">
+                  <div class="cabecalho-painel"><h2 id="titulo-acoes-rapidas" class="h6 mb-0"><i class="bi bi-lightning-charge-fill texto-roxo me-2" aria-hidden="true"></i>Ações rápidas</h2></div>
+                  <a href="../em-breve/em-breve.html" class="acao-rapida"><span class="icone-acao"><i class="bi bi-plus-lg" aria-hidden="true"></i></span><span><strong>Criar um lobby</strong><small>Disponível em breve</small></span><i class="bi bi-chevron-right seta-acao" aria-hidden="true"></i></a>
+                  <a href="../em-breve/em-breve.html" class="acao-rapida"><span class="icone-acao"><i class="bi bi-search" aria-hidden="true"></i></span><span><strong>Buscar jogadores</strong><small>Disponível em breve</small></span><i class="bi bi-chevron-right seta-acao" aria-hidden="true"></i></a>
+                  <a href="#sugestoes" class="acao-rapida"><span class="icone-acao"><i class="bi bi-grid" aria-hidden="true"></i></span><span><strong>Explorar lobbies</strong><small>Veja grupos por jogo</small></span><i class="bi bi-chevron-right seta-acao" aria-hidden="true"></i></a>
+                </section>
+              </div>
+              <div class="col-12 col-md-6 col-xl-12 d-none d-lg-block">
+                <section class="cartao-painel" aria-labelledby="titulo-lobby-destaque">
+                  <div class="cabecalho-painel"><h2 id="titulo-lobby-destaque" class="h6 mb-0"><i class="bi bi-star-fill texto-roxo me-2" aria-hidden="true"></i>Lobby em destaque</h2></div>
+                  <div class="lobby-destaque"><div class="arte-destaque"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i></div><div class="conteudo-destaque"><span class="jogo-destaque">VALORANT</span><h3>Ranked - Diamante+</h3><p class="mb-2"><i class="bi bi-people me-1" aria-hidden="true"></i> 5/5 jogadores <span class="ms-2"><i class="bi bi-mic-fill me-1" aria-hidden="true"></i>Com voz</span></p><button class="btn btn-secondary btn-sm w-100" type="button" disabled aria-label="Lobby cheio">Lobby cheio</button></div></div>
+                </section>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </main>
+      <footer class="rodape-site text-center py-4">SquadHub <span class="texto-roxo px-1">·</span> Encontre players para jogar</footer>
+    </div>
+  </div>
+  <script src="../../src/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../componentes/cabecalho.js"></script>
+  <script src="../../componentes/menu-lateral-lobby.js"></script>
+  <script src="../../componentes/menu-lateral.js"></script>
+  <script src="dados/dados-lobby.js"></script>
+  <script src="componentes/componentes-lobby.js"></script>
+  <script src="lobby.js"></script>
+  <script src="dados/dados-ranking.js"></script>
+  <script src="componentes/componentes-ranking.js"></script>
+  <script src="logica/funcoes-ranking.js"></script>
+  <script src="logica/inicializar-ranking.js"></script>
+</body>
+</html>

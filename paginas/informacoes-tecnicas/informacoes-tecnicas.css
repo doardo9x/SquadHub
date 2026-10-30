@@ -1,0 +1,73 @@
+/* Estilos da pagina e seus principais componentes */
+/* Fundo, fonte e texto geral da página */
+body {
+    min-height: 100vh;
+    color: var(--cor-texto-principal);
+    background: var(--cor-fundo-padrao);
+    font-family: var(--fonte-principal);
+    line-height: 1.6;
+}
+
+/* Logo exibida na introdução */
+.logo-informacoes {
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 575.98px) {
+    .logo-informacoes {
+        width: 140px;
+    }
+}
+
+/* Cards das tecnologias e decisões de interface */
+/* Cartoes de tecnologias e arquivos */
+.cartao-informacoes {
+    color: #fff;
+    background: #17171e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+}
+
+/* Ícones das tecnologias */
+.icone-informacoes {
+    min-width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b47cff;
+    background: rgba(139, 61, 255, 0.12);
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+/* Cards de arquivos na estrutura do projeto */
+.arquivo-informacoes {
+    border-left: 3px solid #8b3dff;
+}
+
+.arquivo-informacoes strong {
+    font-family: monospace;
+}
+
+/* E-mails dos integrantes */
+/* Contatos da equipe */
+.email-equipe {
+    color: #b47cff;
+    text-decoration: none;
+}
+
+.email-equipe:hover {
+    color: #d2b3ff;
+    text-decoration: underline;
+}
+
+/* Fundo levemente mais escuro do rodapé */
+.fundo-rodape {
+    background-color: #09090c;
+}
+/* Mantém o botão de menu visível em qualquer tamanho de tela */

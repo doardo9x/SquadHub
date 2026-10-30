@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | SquadHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../src/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../estilos/variaveis-globais.css">
+    <link rel="stylesheet" href="login.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../../componentes/menu-lateral.css">
+</head>
+<body>
+    <!-- Menu lateral compartilhado -->
+    <div id="ponto-menu-lateral"></div>
+
+    <!-- Conteudo principal da pagina -->
+
+    <main class="container text-white">
+        <div class="row min-vh-100 align-items-center align-content-start align-content-lg-center">
+            <section class="col-12 col-lg-6 d-flex align-items-center justify-content-center justify-content-lg-start text-center text-lg-start px-3 pt-4 pb-3 pt-lg-0 pb-lg-0 ps-lg-5" aria-labelledby="boas-vindas">
+                <div class="texto-login w-100">
+                    <img src="../../imagens/logo-squadhub.png" alt="SquadHub" class="img-fluid w-25 d-block mx-auto mx-lg-0 mb-3">
+                    <h1 id="boas-vindas">BEM-VINDO DE VOLTA!</h1>
+                    <p>ENCONTRE SEU SQUAD E VOLTE A JOGAR.</p>
+                </div>
+            </section>
+
+            <section class="col-12 col-lg-6 d-flex justify-content-center align-items-center px-3 py-3 py-lg-5" aria-labelledby="titulo-login">
+                <!-- Formulario: valida o acesso demonstrativo -->
+                    <form class="formulario w-100" action="#" method="get">
+                    <div class="titulo-formulario mb-3 mb-lg-4">
+                        <h2 id="titulo-login">ACESSE SUA <span>CONTA</span></h2>
+                        <p>ENTRE PARA ENCONTRAR SEU PRÓXIMO SQUAD.</p>
+                    </div>
+
+                    <div class="campo-formulario mb-3">
+                        <label for="email" class="form-label">
+                            <img src="../../imagens/correio.svg" alt="">
+                            EMAIL
+                        </label>
+                        <input type="email" class="form-control" id="email" name="email" autocomplete="email"
+                            placeholder="DIGITE SEU EMAIL" required>
+                    </div>
+
+                    <div class="campo-formulario mb-2">
+                        <label for="senha" class="form-label">
+                            <img src="../../imagens/cadeado.svg" alt="">
+                            SENHA
+                        </label>
+                        <input type="password" class="form-control" id="senha" name="senha"
+                            autocomplete="current-password" placeholder="DIGITE SUA SENHA" required>
+                    </div>
+
+                    <div class="text-end mb-4">
+                        <a class="link-roxo" href="../em-breve/em-breve.html">Esqueceu sua senha?</a>
+                    </div>
+
+                    <button type="submit" class="botao-entrar w-100">ENTRAR</button>
+
+                    <p class="acao-cadastro text-center mb-0">
+                        Ainda não tem uma conta?
+                        <a class="link-roxo" href="../cadastro/cadastro.html">Criar conta</a>
+                    </p>
+                </form>
+            </section>
+        </div>
+    </main>
+    <!-- Rodape compartilhado -->
+    <div id="ponto-rodape"></div>
+
+
+    <script src="../../src/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../componentes/menu-lateral.js"></script>
+    <script src="../../componentes/rodape.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

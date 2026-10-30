@@ -1,0 +1,444 @@
+/* Fundo, tipografia e controles compartilhados */
+body {
+    background:
+        radial-gradient(circle at 100% 50%, rgba(153, 30, 197, .22), transparent 55%),
+        radial-gradient(circle at 0 100%, rgba(120, 15, 170, .16), transparent 40%),
+        var(--cor-fundo-padrao);
+    color: #f7f4ff;
+    font-family: var(--fonte-principal);
+}
+
+a { color: inherit; }
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
+}
+
+.layout-principal { min-height: 100vh; }
+
+/* Cabecalho e painel de entrada */
+.barra-superior {
+    min-height: 72px;
+    background: #09090cf2;
+    border-bottom: 1px solid var(--cor-borda-roxa);
+}
+
+.marca-movel {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.indicador-status {
+    display: inline-block;
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+    background: #4ce39b;
+    box-shadow: 0 0 9px #4ce39b99;
+}
+
+.cartao-painel {
+    height: 100%;
+    padding: 1rem;
+    border-radius: 16px;
+    background: var(--cor-superficie);
+}
+
+.promocao-menu > i,
+.icone-entrada { color: var(--cor-roxo-claro); }
+
+.cabecalho-jogo p,
+.painel-entrada p { color: var(--cor-texto-secundario); }
+
+.painel-entrada {
+    border-radius: 1rem;
+    background: linear-gradient(100deg, #24132d, #111);
+}
+
+.icone-entrada { font-size: 1.9rem; }
+.painel-entrada h2 { font-size: 1rem; }
+
+.painel-entrada .form-control {
+    min-width: 0;
+    background: #292929;
+    color: #fff;
+    font-size: .9rem;
+}
+
+.painel-entrada .form-control::placeholder { color: #88819e; }
+
+.painel-entrada .form-control:focus {
+    border-color: var(--cor-roxo-claro);
+    box-shadow: 0 0 0 .2rem #8d19f62e;
+}
+
+.botao-roxo {
+    color: #fff;
+    border: 1px solid transparent;
+    background: var(--cor-roxo);
+}
+
+.botao-roxo:hover,
+.botao-roxo:focus-visible {
+    color: #fff;
+    background: #8a1bd1;
+}
+
+.link-texto {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: #c8a9ff;
+    font-size: .8rem;
+    text-decoration: none;
+}
+
+.link-texto:hover { color: #fff; }
+
+.secao-jogo { padding-bottom: 1.25rem; }
+
+/* Secoes e cartoes dos jogos */
+.marca-jogo {
+    display: grid;
+    flex: 0 0 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    place-items: center;
+    border-radius: .75rem;
+    background: #7e26d621;
+    color: var(--cor-roxo-claro);
+    font-size: 1.4rem;
+}
+
+.tema-fc { color: #62efa4; background: #24d67e1f; }
+.tema-cs { color: #ffc04d; background: #ffa41c1f; }
+.tema-valorant { color: #ff6682; background: #ff345f1f; }
+
+.cabecalho-jogo h2 { font-weight: 600; }
+
+.quantidade-lobbies {
+    color: var(--cor-texto-secundario);
+    font-size: .75rem;
+}
+
+.carrossel-lobbies { margin-inline: -.75rem; }
+
+.carrossel-lobbies .carousel-control-prev,
+.carrossel-lobbies .carousel-control-next {
+    width: 2.5rem;
+}
+
+.carrossel-lobbies .carousel-control-prev { left: -.5rem; }
+.carrossel-lobbies .carousel-control-next { right: -.5rem; }
+
+.carrossel-lobbies .carousel-control-prev:disabled,
+.carrossel-lobbies .carousel-control-next:disabled { visibility: hidden; }
+
+.trilha-lobbies {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-inline: .75rem;
+    scroll-behavior: smooth;
+    scroll-padding-inline: .75rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.trilha-lobbies::-webkit-scrollbar { display: none; }
+
+.item-lobby {
+    flex: 0 0 100%;
+    min-width: 0;
+    scroll-snap-align: start;
+}
+
+.cartao-lobby {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 172px;
+    border-radius: 16px;
+    background-color: var(--cor-superficie);
+}
+
+.cartao-lobby::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(120deg, #0b0d1626, #06060d80);
+    content: "";
+    opacity: .5;
+}
+
+.cartao-lobby[data-tema="fc"] {
+    background-image: radial-gradient(ellipse at 18% 20%, rgba(39, 148, 83, .16), transparent 50%);
+}
+
+.cartao-lobby[data-tema="cs"] {
+    background-image: radial-gradient(ellipse at 80% 15%, rgba(164, 104, 36, .14), transparent 50%);
+}
+
+.cartao-lobby[data-tema="valorant"] {
+    background-image: radial-gradient(ellipse at 80% 15%, rgba(182, 28, 69, .14), transparent 50%);
+}
+
+.conteudo-cartao {
+    display: flex;
+    min-height: 172px;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.sigla-jogo {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    place-items: center;
+    border-radius: .7rem;
+    background: #06060c9e;
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+.informacoes-lobby {
+    min-height: 5.3rem;
+    padding-left: 3.4rem;
+}
+
+.informacoes-lobby h4 {
+    margin: .15rem 0 .25rem;
+    font-size: .95rem;
+    font-weight: 500;
+}
+
+.informacoes-lobby p {
+    margin: 0 0 .5rem;
+    color: #d1cce3;
+    font-size: .78rem;
+}
+
+.linha-etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3rem;
+}
+
+.linha-etiquetas span {
+    padding: .18rem .55rem;
+    border-radius: 99px;
+    background: #292929;
+    color: #d2b3ff;
+    font-size: .66rem;
+}
+
+.rodape-cartao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    margin-top: auto;
+}
+
+.avatares-participantes { display: flex; padding-left: .2rem; }
+
+.avatares-participantes span {
+    display: grid;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: -.2rem;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #b6a4d5, #474166);
+    color: #fff;
+    font-size: .6rem;
+}
+
+.rodape-cartao .btn { padding: .3rem .6rem; font-size: .72rem; }
+
+/* Paineis laterais e lista online */
+.cabecalho-painel { margin-bottom: 1rem; }
+
+.cabecalho-painel h2 {
+    font-size: .95rem;
+    font-weight: 500;
+}
+
+.numero-secundario { color: #bdb5d7; font-size: .8rem; }
+
+.lista-jogadores-online {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.lista-jogadores-online li {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    min-width: 0;
+}
+
+.avatar-jogador {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #31314b, #8e43c8);
+    color: #fff;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.lista-jogadores-online .avatar-jogador { width: 2.15rem; height: 2.15rem; font-size: .75rem; }
+.avatar-ciano { background: linear-gradient(135deg, #236a73, #1b273f); }
+.avatar-roxo { background: linear-gradient(135deg, #6d42a0, #25223c); }
+.avatar-vermelho { background: linear-gradient(135deg, #a33a51, #292139); }
+.avatar-verde { background: linear-gradient(135deg, #28765b, #20283c); }
+.avatar-laranja { background: linear-gradient(135deg, #9a642d, #282039); }
+
+.jogador-online {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+    line-height: 1.35;
+}
+
+.jogador-online strong { font-size: .8rem; font-weight: 500; }
+
+.jogador-online span {
+    overflow: hidden;
+    color: var(--cor-texto-secundario);
+    font-size: .68rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.icone-jogo-jogador { color: #b8a0e7; font-size: .9rem; }
+
+.lobby-destaque {
+    display: flex;
+    min-height: 140px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: linear-gradient(120deg, #211528, var(--cor-superficie));
+}
+
+.arte-destaque {
+    display: grid;
+    flex: 0 0 3.5rem;
+    place-items: center;
+    color: var(--cor-roxo-claro);
+    font-size: 2.4rem;
+}
+
+.conteudo-destaque {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    min-width: 0;
+    padding: .8rem .75rem .75rem 0;
+}
+
+.jogo-destaque {
+    color: var(--cor-roxo-claro);
+    font-size: .65rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+}
+
+.conteudo-destaque h3 { margin: .2rem 0 .4rem; font-size: .9rem; }
+.conteudo-destaque p { color: #c7bddb; font-size: .68rem; }
+.conteudo-destaque .btn { font-size: .72rem; }
+
+.acao-rapida {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    padding: .6rem 0;
+    border-radius: .5rem;
+    text-decoration: none;
+}
+
+.acao-rapida:hover strong { color: var(--cor-roxo-claro); }
+
+.icone-acao {
+    display: grid;
+    flex: 0 0 2.3rem;
+    width: 2.3rem;
+    height: 2.3rem;
+    place-items: center;
+    border-radius: 50%;
+    background: #7724c833;
+    color: var(--cor-roxo-claro);
+    font-size: 1.1rem;
+}
+
+.acao-rapida > span:nth-child(2) {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.acao-rapida strong { font-size: .8rem; font-weight: 500; }
+.acao-rapida small { color: var(--cor-texto-secundario); font-size: .68rem; }
+.seta-acao { color: #81759f; font-size: .75rem; }
+.rodape-site { color: #77718f; font-size: .75rem; }
+
+/* Classificacao da comunidade */
+.painel-ranking .cabecalho-painel { margin-bottom: .25rem; }
+
+.formula-ranking {
+    color: #c8a9ff;
+    font-size: .75rem;
+}
+
+.item-ranking { border-bottom: 1px solid var(--cor-borda-roxa); }
+.item-ranking:last-child { border-bottom: 0; }
+
+.posicao-ranking {
+    flex: 0 0 2rem;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    background: #7724c833;
+    color: #e2c6ff;
+}
+
+.pontuacao-ranking { color: #d9b4ff; font-size: .9rem; }
+
+/* Ajustes para telas menores */
+@media (max-width: 575.98px) {
+    .barra-superior { min-height: 64px; }
+    .painel-entrada .form-control { min-height: 46px; font-size: .9rem; }
+    .cabecalho-jogo { gap: .6rem !important; }
+    .cabecalho-jogo h2 { font-size: 1rem; }
+    .cabecalho-jogo p, .quantidade-lobbies { font-size: .7rem; }
+    .cartao-lobby, .conteudo-cartao { min-height: 180px; }
+    .conteudo-cartao { padding: .65rem; }
+    .sigla-jogo { top: .65rem; left: .65rem; }
+    .informacoes-lobby { padding: 3.1rem 0 0; }
+    .avatares-participantes span { width: 1.3rem; height: 1.3rem; }
+    .rodape-cartao .btn { padding: .25rem .35rem; font-size: .65rem; }
+    .carrossel-lobbies .carousel-control-prev,
+    .carrossel-lobbies .carousel-control-next { width: 2rem; }
+}
+
+@media (min-width: 768px) {
+    .item-lobby { flex-basis: calc((100% - 1rem) / 2); }
+}
+
+@media (min-width: 1400px) {
+    .item-lobby { flex-basis: calc((100% - 2rem) / 3); }
+}

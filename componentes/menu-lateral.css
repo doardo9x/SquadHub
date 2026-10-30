@@ -1,0 +1,77 @@
+/* Menu fixo do Lobby */
+.menu-lateral-fixo .menu-lateral-lobby {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 1020;
+    width: 220px;
+    border-right: 1px solid var(--cor-borda-roxa);
+    background: var(--cor-fundo-menu);
+}
+
+.menu-lateral-fixo .layout-principal { margin-left: 220px; }
+
+/* Aparência compartilhada entre o menu móvel e o menu fixo */
+.menu-lateral-lobby .marca,
+.menu-lateral-compartilhado .marca { color: inherit; }
+
+.menu-lateral-lobby .logo-marca,
+.menu-lateral-compartilhado .logo-marca {
+    width: 84px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.menu-lateral-lobby .legenda-marca,
+.menu-lateral-compartilhado .legenda-marca {
+    color: var(--cor-texto-secundario);
+    font-size: .66rem;
+}
+
+.menu-lateral-lobby .nav-link,
+.menu-lateral-compartilhado .nav-link {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    padding: .6rem .75rem;
+    border-radius: .65rem;
+    color: var(--cor-texto-menu);
+}
+
+.menu-lateral-lobby .nav-link i,
+.menu-lateral-compartilhado .nav-link i {
+    width: 1.1rem;
+    text-align: center;
+}
+
+.menu-lateral-lobby .rotulo-menu,
+.menu-lateral-compartilhado .rotulo-menu {
+    padding: .25rem .75rem;
+    color: var(--cor-texto-secundario);
+    font-size: .65rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+}
+
+.menu-lateral-lobby .nav-link:hover,
+.menu-lateral-compartilhado .nav-link:hover {
+    color: var(--cor-texto-principal);
+    background: var(--cor-fundo-menu-hover);
+}
+
+.menu-lateral-lobby .nav-link.active,
+.menu-lateral-compartilhado .nav-link.active {
+    color: var(--cor-texto-principal);
+    background: var(--cor-fundo-menu-ativo);
+}
+
+.menu-lateral-compartilhado {
+    --bs-offcanvas-width: 260px;
+    color: #f7f4ff;
+    background: var(--cor-fundo-menu);
+}
+
+/* Em telas menores, o conteúdo ocupa a largura toda */
+@media (max-width: 1199.98px) {
+    .menu-lateral-fixo .layout-principal { margin-left: 0; }
+}

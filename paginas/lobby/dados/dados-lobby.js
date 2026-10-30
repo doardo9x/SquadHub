@@ -1,8 +1,10 @@
 // Conteúdo demonstrativo separado da estrutura dos componentes.
 window.DADOS_LOBBY = {
+  // Texto e destino comuns aos botões de todas as salas.
   acoes: {
     entrarNaSala: { link: "../em-breve/em-breve.html", texto: "Em breve" }
   },
+  // Cada jogo agrupa os dados do cabeçalho e as salas do seu carrossel.
   jogos: [
     {
       identificador: "fc",
@@ -48,6 +50,7 @@ window.DADOS_LOBBY = {
       ]
     }
   ],
+  // Campos usados para desenhar avatar, status e ícone de cada pessoa.
   jogadoresOnline: [
     { nome: "zNinja", inicial: "Z", status: "Jogando CS2", temaAvatar: "cyan", iconeJogo: "bi-crosshair" },
     { nome: "Lukz", inicial: "L", status: "No lobby - EA FC", temaAvatar: "purple", iconeJogo: "bi-controller" },

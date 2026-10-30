@@ -1,6 +1,7 @@
 // Apresentação: transforma a classificação em linhas visuais.
 window.COMPONENTES_RANKING = {
   renderizarRanking(jogadores) {
+    // Apresenta posição, vitórias e pontos formatados para o padrão brasileiro.
     return jogadores.map((jogador) => `
       <li class="item-ranking d-flex align-items-center gap-3 py-3">
         <span class="posicao-ranking d-grid rounded-circle fw-semibold" aria-label="Posição ${jogador.posicao}">${jogador.posicao}</span>

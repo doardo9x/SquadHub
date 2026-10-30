@@ -1,6 +1,7 @@
 // Componentes: montam cartões, seções de jogos e linhas de jogadores.
 window.COMPONENTES_LOBBY = {
   criarCartaoSala(sala, jogo, acao) {
+    // As iniciais são exibidas como avatares simples dos participantes.
     const avatares = sala.participantes
       .map((inicial) => `<span aria-hidden="true">${inicial}</span>`)
       .join("");
@@ -23,6 +24,7 @@ window.COMPONENTES_LOBBY = {
   },
 
   criarSecaoJogo(jogo, acao) {
+    // IDs próprios conectam o título, a trilha rolável e seus controles.
     const idTitulo = `${jogo.identificador}-titulo`;
     const idTrilha = `${jogo.identificador}-trilha-lobbies`;
     const cartoesSalas = jogo.salas
@@ -49,6 +51,7 @@ window.COMPONENTES_LOBBY = {
   },
 
   criarJogadorOnline(jogador) {
+    // A cor, o nome, o status e o ícone vêm do objeto do jogador.
     return `
       <li>
         <div class="avatar-jogador avatar-${jogador.temaAvatar}" aria-hidden="true">${jogador.inicial}</div>

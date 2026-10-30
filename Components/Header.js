@@ -4,11 +4,6 @@ const linkHeader = (caminho) => new URL(caminho, raizHeader).href;
 const cabecalho = `
   <header class="topbar d-flex align-items-center justify-content-between gap-2 px-3 px-md-4">
     <div class="d-flex align-items-center gap-2">
-      <button class="btn btn-dark d-xl-none d-flex align-items-center justify-content-center p-2" type="button"
-        data-aside-toggle data-bs-toggle="offcanvas" data-bs-target="#asideMenu"
-        aria-controls="asideMenu" aria-label="Abrir menu">
-        <i class="bi bi-list fs-5" aria-hidden="true"></i>
-      </button>
       <a class="mobile-brand d-xl-none text-decoration-none" href="${linkHeader("index.html")}">SquadHub</a>
       <span class="breadcrumb-label d-none d-xl-inline">Encontre seu próximo squad</span>
     </div>

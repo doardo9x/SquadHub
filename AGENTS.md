@@ -140,3 +140,7 @@ de inspeção visual.
 - Não instalar dependências sem justificar sua necessidade.
 - Não alterar arquivos de configuração fora do escopo
   sem explicar o motivo.
+
+## 10. ui/ux, experiencia do usuario
+- Quesitos de ui/ux são indispensaveis, todas as modificações de desing devem manter principios bem aplicados. A experiencia do usuario, facilidade navegação e facil entendimento do usuario deve ser o elemento principal ao criar novos elementos.
+

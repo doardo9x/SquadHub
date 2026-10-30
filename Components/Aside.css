@@ -1,27 +1,120 @@
-.has-fixed-aside .sidebar { position: fixed; inset: 0 auto 0 0; z-index: 1020; width: 220px; background: #09090c; border-right: 1px solid rgba(198, 107, 255, .16); }
-.has-fixed-aside .main-layout { margin-left: 220px; }
-.has-fixed-aside .brand { color: inherit; }
-.has-fixed-aside .brand-logo { width: 84px; max-width: 100%; height: auto; object-fit: contain; }
-.has-fixed-aside .brand-caption { color: #aaa; font-size: .66rem; }
-.has-fixed-aside .sidebar .nav-link { display: flex; align-items: center; gap: .6rem; padding: .55rem .7rem; color: #c5bfdc; font-size: .86rem; border-radius: .65rem; }
-.has-fixed-aside .sidebar .nav-link i { width: 1.1rem; text-align: center; }
-.has-fixed-aside .sidebar .sidebar-label { padding: .25rem .7rem; color: #aaa; font-size: .6rem; font-weight: 600; letter-spacing: .1em; }
-.has-fixed-aside .sidebar .nav-link:hover { color: #fff; background: #8e19f622; }
-.has-fixed-aside .sidebar .nav-link.active { color: #fff; background: #7414c8; }
-.has-fixed-aside .sidebar .sidebar-logout { display: flex; align-items: center; gap: .6rem; padding: .55rem .7rem; color: #e4d9f5; border-radius: .65rem; background: rgba(255, 255, 255, .05); font-size: .84rem; text-decoration: none; }
-.has-fixed-aside .sidebar .sidebar-logout:hover { color: #fff; background: #8e19f622; }
-.shared-aside { --bs-offcanvas-width: 260px; color: #f7f4ff; background: #09090c; }
-.shared-aside .brand { color: inherit; }
-.shared-aside .brand-logo { width: 84px; max-width: 100%; height: auto; object-fit: contain; }
-.shared-aside .brand-caption { color: #aaa; font-size: .66rem; }
-.shared-aside .nav-link { display: flex; align-items: center; gap: .7rem; padding: .6rem .75rem; color: #c5bfdc; border-radius: .65rem; }
-.shared-aside .nav-link i { width: 1.1rem; text-align: center; }
-.shared-aside .sidebar-label { padding: .25rem .75rem; color: #aaa; font-size: .65rem; font-weight: 600; letter-spacing: .1em; }
-.shared-aside .nav-link:hover { color: #fff; background: #8e19f622; }
-.shared-aside .nav-link.active { color: #fff; background: #7414c8; }
-.shared-aside .sidebar-logout { display: flex; align-items: center; gap: .6rem; padding: .6rem .75rem; color: #e4d9f5; border-radius: .65rem; background: rgba(255, 255, 255, .05); text-decoration: none; }
-.shared-aside .sidebar-logout:hover { color: #fff; background: #8e19f622; }
+.has-fixed-aside .lobby-sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 1020;
+    width: 220px;
+    border-right: 1px solid rgba(198, 107, 255, .16);
+    background: #09090c;
+}
+
+.has-fixed-aside .main-layout {
+    margin-left: 220px;
+}
+
+.lobby-sidebar .brand {
+    color: inherit;
+}
+
+.lobby-sidebar .brand-logo {
+    width: 84px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.lobby-sidebar .brand-caption {
+    color: #aaa;
+    font-size: .66rem;
+}
+
+.lobby-sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    padding: .6rem .75rem;
+    color: #c5bfdc;
+    border-radius: .65rem;
+}
+
+.lobby-sidebar .nav-link i {
+    width: 1.1rem;
+    text-align: center;
+}
+
+.lobby-sidebar .sidebar-label {
+    padding: .25rem .75rem;
+    color: #aaa;
+    font-size: .65rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+}
+
+.lobby-sidebar .nav-link:hover {
+    color: #fff;
+    background: #8e19f622;
+}
+
+.lobby-sidebar .nav-link.active {
+    color: #fff;
+    background: #7414c8;
+}
+
+.shared-aside {
+    --bs-offcanvas-width: 260px;
+    color: #f7f4ff;
+    background: #09090c;
+}
+
+.shared-aside .brand {
+    color: inherit;
+}
+
+.shared-aside .brand-logo {
+    width: 84px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.shared-aside .brand-caption {
+    color: #aaa;
+    font-size: .66rem;
+}
+
+.shared-aside .nav-link {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    padding: .6rem .75rem;
+    color: #c5bfdc;
+    border-radius: .65rem;
+}
+
+.shared-aside .nav-link i {
+    width: 1.1rem;
+    text-align: center;
+}
+
+.shared-aside .sidebar-label {
+    padding: .25rem .75rem;
+    color: #aaa;
+    font-size: .65rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+}
+
+.shared-aside .nav-link:hover {
+    color: #fff;
+    background: #8e19f622;
+}
+
+.shared-aside .nav-link.active {
+    color: #fff;
+    background: #7414c8;
+}
 
 @media (max-width: 1199.98px) {
-  .has-fixed-aside .main-layout { margin-left: 0; }
+    .has-fixed-aside .main-layout {
+        margin-left: 0;
+    }
 }
